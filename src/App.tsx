@@ -13,8 +13,8 @@ import Footer from './components/Footer';
 function App() {
   return (
     <Router>
-      {/* Full screen background using brandlight color */}
-      <div className="min-h-screen bg-brandlight text-gray-100 flex flex-col">
+      {/* ✅ Full screen gradient background applied everywhere */}
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white flex flex-col">
         
         {/* Navbar stays on top */}
         <Navbar />

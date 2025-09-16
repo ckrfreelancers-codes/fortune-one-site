@@ -67,7 +67,7 @@ const Projects = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20 bg-neutral-950 text-gray-100">
+    <div className="min-h-screen pt-20 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white relative overflow-hidden">
         <div className="absolute inset-0">
@@ -106,10 +106,8 @@ const Projects = () => {
           >
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
               Our 
-              <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
               <span className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
                 {' '}Projects
-              </span>
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
@@ -120,7 +118,7 @@ const Projects = () => {
       </section>
 
       {/* Projects Grid */}
-      <section className="py-20 bg-neutral-950">
+      <section className="py-20 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -131,11 +129,11 @@ const Projects = () => {
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Featured 
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                 {' '}Developments
               </span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
               Each project represents our commitment to quality, innovation, and luxury living
             </p>
           </motion.div>

@@ -7,8 +7,7 @@ import {
   EnvelopeIcon,
   HomeIcon,
   BuildingOfficeIcon,
-  UsersIcon,
-  HeartIcon
+  UsersIcon
 } from '@heroicons/react/24/outline';
 
 const Footer = () => {
@@ -41,7 +40,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-800 text-white relative overflow-hidden">
+    <footer className="bg-gradient-to-r from-blue-900 via-purple-900 to-gray-900 text-white relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute inset-0">
         <motion.div
@@ -109,16 +108,16 @@ const Footer = () => {
                   <MapPinIcon className="h-5 w-5 text-amber-400 mt-1 flex-shrink-0" />
                   <div className="text-blue-100">
                     <p>123 Business Tower, Financial District</p>
-                    <p>Mumbai, India 400001</p>
+                    <p>Fortune one build co Pvt Ltd. 19/3 , Cunningham Road Bangalore 560001</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
                   <PhoneIcon className="h-5 w-5 text-amber-400 flex-shrink-0" />
-                  <p className="text-blue-100">+91 98765 43210</p>
+                  <p className="text-blue-100">+917996000533</p>
                 </div>
                 <div className="flex items-center space-x-3">
                   <EnvelopeIcon className="h-5 w-5 text-amber-400 flex-shrink-0" />
-                  <p className="text-blue-100">info@fortuneone.com</p>
+                  <p className="text-blue-100">reach@fortuneone.co</p>
                 </div>
               </motion.div>
             </div>
@@ -275,8 +274,6 @@ const Footer = () => {
               </div>
               <div className="flex items-center text-blue-200 text-sm">
                 <span>Made By Chethana K R</span>
-                
-                
               </div>
             </motion.div>
           </div>

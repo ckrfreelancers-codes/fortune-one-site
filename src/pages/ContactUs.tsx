@@ -7,17 +7,17 @@ const ContactUs = () => {
     {
       icon: MapPinIcon,
       title: 'Visit Us',
-      details: ['123 Business Tower', 'Financial District', 'Mumbai, India 400001']
+      details: ['Fortune one build co Pvt Ltd. 19/3 , Cunningham Road Bangalore 560001']
     },
     {
       icon: PhoneIcon,
       title: 'Call Us',
-      details: ['+91 98765 43210', '+91 98765 43211', 'Toll Free: 1800-123-456']
+      details: ['+917996000533', '+91 98765 43211', 'Toll Free: 1800-123-456']
     },
     {
       icon: EnvelopeIcon,
       title: 'Email Us',
-      details: ['info@premiumestates.com', 'sales@premiumestates.com', 'support@premiumestates.com']
+      details: ['reach@fortuneone.co']
     },
     {
       icon: ClockIcon,
@@ -28,9 +28,9 @@ const ContactUs = () => {
 
   const offices = [
     {
-      city: 'Mumbai',
-      address: '123 Business Tower, Financial District',
-      phone: '+91 98765 43210',
+      city: 'Bengaluru',
+      address: 'Fortune one build co Pvt Ltd. 19/3 , Cunningham Road Bangalore 560001',
+      phone: '+917996000533',
       image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800'
     },
     {
