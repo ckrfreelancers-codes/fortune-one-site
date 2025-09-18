@@ -1,126 +1,113 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { X } from "lucide-react";
+import { motion } from "framer-motion";
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
+const menuItems = [
+  { label: "Home", to: "/" },
+  { label: "About Us", to: "/about" },
+  { label: "Projects", to: "/projects" },
+  { label: "Channel Partners", to: "/partners" },
+  { label: "NRI Support", to: "/nri-support" },
+  { label: "Career", to: "/career" },
+  { label: "Contact Us", to: "/contact" },
+];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const offset = window.scrollY;
-      setScrolled(offset > 50);
-    };
+const listItemVariants = {
+  hidden: { x: 30, opacity: 0 },
+  visible: (i: number) => ({
+    x: 0,
+    opacity: 1,
+    transition: { delay: i * 0.06, type: "spring", stiffness: 120 },
+  }),
+};
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+const Navbar: React.FC = () => {
+  const [open, setOpen] = useState(false);
 
-  const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'About Us', path: '/about' },
-    { name: 'Projects', path: '/projects' },
-    { name: 'Channel Partners', path: '/partners' },
-    { name: 'NRI Support', path: '/nri-support' },
-    { name: 'Career', path: '/career' },
-    { name: 'Contact Us', path: '/contact' },
-  ];
+  const closeMenu = () => setOpen(false);
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-[#1c2634]/95 backdrop-blur-md shadow-lg'
-          : 'bg-transparent'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+    <>
+      {/* Header */}
+      <header className="fixed top-0 left-0 w-full bg-branddark text-white z-50 shadow-md">
+        <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <motion.img
-              whileHover={{ scale: 1.05 }}
-              src="/Fortune One.png"
-              alt="Fortune One logo"
-              className="h-12 w-auto object-contain"
-            />
+          <Link to="/" onClick={closeMenu} className="flex items-center space-x-3">
+            <img src="/logo.png" alt="Fortune One Logo" className="h-10 w-auto" />
+            <span className="text-lg font-semibold tracking-wide">Fortune One</span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link key={item.path} to={item.path}>
-                <motion.div
-                  whileHover={{ y: -2 }}
-                  className={`relative px-3 py-2 text-sm font-medium transition-colors duration-200 ${
-                    location.pathname === item.path
-                      ? 'text-amber-400'
-                      : scrolled
-                      ? 'text-gray-200 hover:text-amber-400'
-                      : 'text-white hover:text-amber-300'
-                  }`}
-                >
-                  {item.name}
-                  {location.pathname === item.path && (
-                    <motion.div
-                      layoutId="activeTab"
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-amber-400"
-                    />
-                  )}
-                </motion.div>
-              </Link>
-            ))}
-          </div>
+          {/* "Menu" button in the right corner */}
+          <button
+            aria-label={open ? "Close menu" : "Open menu"}
+            onClick={() => setOpen(!open)}
+            className="p-2 rounded-md hover:bg-brandprimary/20 transition ml-auto font-semibold text-lg"
+          >
+            {open ? <X size={22} /> : "Menu"}
+          </button>
+        </div>
+      </header>
 
-          {/* Mobile menu button */}
-          <div className="lg:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className={`p-2 rounded-md ${
-                scrolled ? 'text-gray-200' : 'text-white'
-              }`}
-            >
-              {isOpen ? (
-                <XMarkIcon className="h-6 w-6" />
-              ) : (
-                <Bars3Icon className="h-6 w-6" />
-              )}
-            </button>
+      {/* Dim background (only when open) */}
+      <div
+        className={`fixed inset-0 bg-black transition-opacity duration-300 ${open ? "opacity-50 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+        onClick={closeMenu}
+        aria-hidden={!open}
+      />
+
+      {/* Side panel */}
+      <aside
+        className={`fixed top-0 right-0 h-full w-80 bg-branddark text-white z-50 transform transition-transform duration-400 ${
+          open ? "translate-x-0" : "translate-x-full"
+        }`}
+        aria-hidden={!open}
+      >
+        <div className="px-6 pt-16">
+          {/* Only menu items, no image or "Project" word */}
+          <nav>
+            <ul className="flex flex-col space-y-4">
+              {menuItems.map((item, idx) => (
+                <motion.li
+                  key={item.label}
+                  className="menu-item"
+                  custom={idx}
+                  initial="hidden"
+                  animate={open ? "visible" : "hidden"}
+                  variants={listItemVariants}
+                >
+                  <Link
+                    to={item.to}
+                    onClick={closeMenu}
+                    className="block hover:text-brandlight transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                </motion.li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Contact block */}
+          <div className="mt-8 text-sm text-gray-200">
+            <h4 className="font-semibold mb-2">Head Office</h4>
+            <p>19/3 Cunningham Road, Bengaluru 560001</p>
+            <p className="mt-2">Call: +91 79960 00533</p>
+            <p>Email: reach@fortuneone.co</p>
           </div>
         </div>
-      </div>
 
-      {/* Mobile Navigation */}
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          className="lg:hidden bg-[#1c2634]/95 backdrop-blur-md border-t border-gray-700"
-        >
-          <div className="px-4 py-6 space-y-4">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                onClick={() => setIsOpen(false)}
-                className={`block px-4 py-2 text-base font-medium rounded-lg transition-colors duration-200 ${
-                  location.pathname === item.path
-                    ? 'text-amber-400 bg-[#273140]'
-                    : 'text-gray-200 hover:text-amber-400 hover:bg-[#273140]'
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-        </motion.div>
-      )}
-    </motion.nav>
+        {/* Close action at bottom */}
+        <div className="absolute bottom-6 left-6 right-6">
+          <button
+            onClick={closeMenu}
+            className="w-full py-2 bg-brandprimary text-white rounded-md hover:bg-brandlight transition"
+          >
+            Close Menu
+          </button>
+        </div>
+      </aside>
+    </>
   );
 };
 

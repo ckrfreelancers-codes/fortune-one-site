@@ -4,8 +4,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        brandlight: "#5781ab", // Light blue
-        branddark: "#2f4669",  // Dark navy
+        branddark: "#3E2C1C",      // Rich brown (primary brand dark)
+        brandprimary: "#6B4226",   // Deep earthy brown
+        brandlight: "#D4A373",     // Warm golden beige
+        brandgold: "#F5C518",      // Fortune golden highlight
+        brandgreen: "#4CAF50",     // Eco-friendly green
+        brandwhite: "#ffffff",
+        brandoffwhite: "#f8f9fb",
       },
     },
   },

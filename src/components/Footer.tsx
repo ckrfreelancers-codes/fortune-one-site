@@ -40,31 +40,17 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-r from-blue-900 via-purple-900 to-gray-900 text-white relative overflow-hidden">
+    <footer className="bg-branddark text-white relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute inset-0">
         <motion.div
-          animate={{ 
-            rotate: [0, 360],
-            scale: [1, 1.1, 1]
-          }}
-          transition={{ 
-            duration: 30, 
-            repeat: Infinity,
-            ease: 'linear'
-          }}
+          animate={{ rotate: [0, 360], scale: [1, 1.1, 1] }}
+          transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
           className="absolute top-20 right-20 w-40 h-40 border border-white/5 rounded-3xl"
         />
         <motion.div
-          animate={{ 
-            y: [0, -20, 0],
-            opacity: [0.1, 0.3, 0.1]
-          }}
-          transition={{ 
-            duration: 8, 
-            repeat: Infinity,
-            ease: 'easeInOut'
-          }}
+          animate={{ y: [0, -20, 0], opacity: [0.1, 0.3, 0.1] }}
+          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
           className="absolute bottom-20 left-20 w-60 h-60 bg-blue-500/10 rounded-full blur-3xl"
         />
       </div>
@@ -91,8 +77,9 @@ const Footer = () => {
                   </motion.div>
                   <span className="text-2xl font-bold">Fortune One</span>
                 </Link>
-                <p className="text-blue-100 text-lg leading-relaxed mb-6">
-                  Crafting extraordinary real estate experiences for over 15 years. We don't just sell properties; we create lifestyles and build communities where families thrive.
+                <p className="text-brandlight text-lg leading-relaxed mb-6">
+                  Crafting extraordinary real estate experiences for over 15 years. 
+                  We don't just sell properties; we create lifestyles and build communities where families thrive.
                 </p>
               </motion.div>
 
@@ -106,18 +93,18 @@ const Footer = () => {
               >
                 <div className="flex items-start space-x-3">
                   <MapPinIcon className="h-5 w-5 text-amber-400 mt-1 flex-shrink-0" />
-                  <div className="text-blue-100">
+                  <div className="text-brandlight">
                     <p>123 Business Tower, Financial District</p>
-                    <p>Fortune one build co Pvt Ltd. 19/3 , Cunningham Road Bangalore 560001</p>
+                    <p>Fortune One Build Co Pvt Ltd. 19/3, Cunningham Road, Bangalore 560001</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
                   <PhoneIcon className="h-5 w-5 text-amber-400 flex-shrink-0" />
-                  <p className="text-blue-100">+917996000533</p>
+                  <p className="text-brandlight">+91 79960 00533</p>
                 </div>
                 <div className="flex items-center space-x-3">
                   <EnvelopeIcon className="h-5 w-5 text-amber-400 flex-shrink-0" />
-                  <p className="text-blue-100">reach@fortuneone.co</p>
+                  <p className="text-brandlight">reach@fortuneone.co</p>
                 </div>
               </motion.div>
             </div>
@@ -138,7 +125,7 @@ const Footer = () => {
                   <li key={index}>
                     <Link 
                       to={link.path}
-                      className="text-blue-100 hover:text-amber-400 transition-colors duration-200 hover:translate-x-2 inline-block transform"
+                      className="text-brandlight hover:text-amber-400 transition-colors duration-200 hover:translate-x-2 inline-block transform"
                     >
                       {link.name}
                     </Link>
@@ -162,7 +149,7 @@ const Footer = () => {
                   <li key={index}>
                     <Link 
                       to={link.path}
-                      className="text-blue-100 hover:text-amber-400 transition-colors duration-200 hover:translate-x-2 inline-block transform"
+                      className="text-brandlight hover:text-amber-400 transition-colors duration-200 hover:translate-x-2 inline-block transform"
                     >
                       {link.name}
                     </Link>
@@ -186,7 +173,7 @@ const Footer = () => {
                   <li key={index}>
                     <Link 
                       to={link.path}
-                      className="text-blue-100 hover:text-amber-400 transition-colors duration-200 hover:translate-x-2 inline-block transform"
+                      className="text-brandlight hover:text-amber-400 transition-colors duration-200 hover:translate-x-2 inline-block transform"
                     >
                       {link.name}
                     </Link>
@@ -227,14 +214,14 @@ const Footer = () => {
               className="text-center"
             >
               <h3 className="text-2xl font-bold mb-4">Stay Updated</h3>
-              <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
+              <p className="text-brandlight mb-8 max-w-2xl mx-auto">
                 Subscribe to our newsletter for the latest updates on new projects, market insights, and exclusive offers.
               </p>
               <div className="flex flex-col sm:flex-row max-w-md mx-auto">
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 px-6 py-3 rounded-l-xl sm:rounded-r-none rounded-r-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                  className="flex-1 px-6 py-3 rounded-l-xl sm:rounded-r-none rounded-r-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-brandlight focus:outline-none focus:ring-2 focus:ring-amber-400"
                 />
                 <motion.button
                   whileHover={{ scale: 1.05 }}
@@ -258,10 +245,10 @@ const Footer = () => {
               transition={{ duration: 0.6 }}
               className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
             >
-              <div className="text-blue-200 text-sm">
+              <div className="text-brandlight text-sm">
                 <p>&copy; 2025 Fortune One. All rights reserved.</p>
               </div>
-              <div className="flex items-center space-x-6 text-sm text-blue-200">
+              <div className="flex items-center space-x-6 text-sm text-brandlight">
                 <a href="#" className="hover:text-amber-400 transition-colors duration-200">
                   Privacy Policy
                 </a>
@@ -272,7 +259,7 @@ const Footer = () => {
                   Cookie Policy
                 </a>
               </div>
-              <div className="flex items-center text-blue-200 text-sm">
+              <div className="flex items-center text-brandlight text-sm">
                 <span>Made By Chethana K R</span>
               </div>
             </motion.div>
