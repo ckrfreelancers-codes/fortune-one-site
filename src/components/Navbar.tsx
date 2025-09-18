@@ -30,23 +30,23 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-[#1c2634]/95 backdrop-blur-md shadow-lg'
-          : 'bg-transparent'
-      }`}
-    >
+  initial={{ y: -100 }}
+  animate={{ y: 0 }}
+  className={`fixed w-full z-50 transition-all duration-300 ${
+    scrolled
+      ? 'bg-[#997E67]/40 backdrop-blur-lg shadow-lg border-b border-[#CCBEB1]/30'
+      : 'bg-[#997E67]/20 backdrop-blur-md'
+  }`}
+>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <motion.img
-              whileHover={{ scale: 1.05 }}
               src="/Fortune One.png"
-              alt="Fortune One logo"
-              className="h-12 w-auto object-contain"
+              alt="Fortune One Logo"
+              whileHover={{ scale: 1.05, rotate: 2 }}
+              className="h-10 w-auto object-contain"
             />
           </Link>
 
@@ -55,20 +55,20 @@ const Navbar = () => {
             {navItems.map((item) => (
               <Link key={item.path} to={item.path}>
                 <motion.div
-                  whileHover={{ y: -2 }}
-                  className={`relative px-3 py-2 text-sm font-medium transition-colors duration-200 ${
+                  whileHover={{ y: -2, scale: 1.05 }}
+                  className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full ${
                     location.pathname === item.path
-                      ? 'text-amber-400'
+                      ? 'text-[#FFDBBB] bg-[#664930] shadow-lg'
                       : scrolled
-                      ? 'text-gray-200 hover:text-amber-400'
-                      : 'text-white hover:text-amber-300'
+                      ? 'text-[#FFDBBB] hover:text-white hover:bg-[#664930]/20'
+                      : 'text-[#664930] hover:text-[#997E67] hover:bg-[#FFDBBB]/30'
                   }`}
                 >
                   {item.name}
                   {location.pathname === item.path && (
                     <motion.div
                       layoutId="activeTab"
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-amber-400"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#FFDBBB] rounded-full"
                     />
                   )}
                 </motion.div>
@@ -78,10 +78,11 @@ const Navbar = () => {
 
           {/* Mobile menu button */}
           <div className="lg:hidden">
-            <button
+            <motion.button
+              whileTap={{ scale: 0.95 }}
               onClick={() => setIsOpen(!isOpen)}
-              className={`p-2 rounded-md ${
-                scrolled ? 'text-gray-200' : 'text-white'
+              className={`p-2 rounded-md transition-colors duration-200 ${
+                scrolled ? 'text-[#FFDBBB] hover:bg-[#664930]/20' : 'text-[#664930] hover:bg-[#FFDBBB]/30'
               }`}
             >
               {isOpen ? (
@@ -89,7 +90,7 @@ const Navbar = () => {
               ) : (
                 <Bars3Icon className="h-6 w-6" />
               )}
-            </button>
+            </motion.button>
           </div>
         </div>
       </div>
@@ -100,7 +101,7 @@ const Navbar = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="lg:hidden bg-[#1c2634]/95 backdrop-blur-md border-t border-gray-700"
+          className="lg:hidden bg-[#997E67]/95 backdrop-blur-md border-t border-[#CCBEB1]/30"
         >
           <div className="px-4 py-6 space-y-4">
             {navItems.map((item) => (
@@ -108,10 +109,10 @@ const Navbar = () => {
                 key={item.path}
                 to={item.path}
                 onClick={() => setIsOpen(false)}
-                className={`block px-4 py-2 text-base font-medium rounded-lg transition-colors duration-200 ${
+                className={`block px-4 py-3 text-base font-medium rounded-xl transition-all duration-200 ${
                   location.pathname === item.path
-                    ? 'text-amber-400 bg-[#273140]'
-                    : 'text-gray-200 hover:text-amber-400 hover:bg-[#273140]'
+                    ? 'text-[#FFDBBB] bg-[#664930] shadow-lg'
+                    : 'text-[#FFDBBB] hover:text-white hover:bg-[#664930]/30'
                 }`}
               >
                 {item.name}

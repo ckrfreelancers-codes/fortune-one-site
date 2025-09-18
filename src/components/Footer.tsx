@@ -5,9 +5,7 @@ import {
   MapPinIcon, 
   PhoneIcon, 
   EnvelopeIcon,
-  HomeIcon,
-  BuildingOfficeIcon,
-  UsersIcon
+  HomeIcon
 } from '@heroicons/react/24/outline';
 
 const Footer = () => {
@@ -40,37 +38,22 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-r from-blue-900 via-purple-900 to-gray-900 text-white relative overflow-hidden">
+    <footer className="bg-gradient-to-br from-[#664930] via-[#997E67] to-[#CCBEB1] text-[#FFDBBB] relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute inset-0">
         <motion.div
-          animate={{ 
-            rotate: [0, 360],
-            scale: [1, 1.1, 1]
-          }}
-          transition={{ 
-            duration: 30, 
-            repeat: Infinity,
-            ease: 'linear'
-          }}
-          className="absolute top-20 right-20 w-40 h-40 border border-white/5 rounded-3xl"
+          animate={{ rotate: [0, 360], scale: [1, 1.1, 1] }}
+          transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+          className="absolute top-20 right-20 w-40 h-40 border border-[#FFDBBB]/10 rounded-3xl"
         />
         <motion.div
-          animate={{ 
-            y: [0, -20, 0],
-            opacity: [0.1, 0.3, 0.1]
-          }}
-          transition={{ 
-            duration: 8, 
-            repeat: Infinity,
-            ease: 'easeInOut'
-          }}
-          className="absolute bottom-20 left-20 w-60 h-60 bg-blue-500/10 rounded-full blur-3xl"
+          animate={{ y: [0, -20, 0], opacity: [0.1, 0.2, 0.1] }}
+          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+          className="absolute bottom-20 left-20 w-60 h-60 bg-[#FFDBBB]/10 rounded-full blur-3xl"
         />
       </div>
 
       <div className="relative z-10">
-        {/* Main Footer Content */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
             {/* Company Info */}
@@ -85,14 +68,16 @@ const Footer = () => {
                 <Link to="/" className="flex items-center space-x-3 mb-6">
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: 5 }}
-                    className="w-12 h-12 bg-gradient-to-br from-amber-400 to-yellow-600 rounded-2xl flex items-center justify-center"
+                    className="w-12 h-12 bg-gradient-to-br from-[#FFDBBB] to-[#CCBEB1] rounded-2xl flex items-center justify-center"
                   >
-                    <HomeIcon className="h-6 w-6 text-white" />
+                    <HomeIcon className="h-6 w-6 text-[#664930]" />
                   </motion.div>
-                  <span className="text-2xl font-bold">Fortune One</span>
+                  <span className="text-2xl font-bold text-[#FFDBBB]">Fortune One</span>
                 </Link>
-                <p className="text-blue-100 text-lg leading-relaxed mb-6">
-                  Crafting extraordinary real estate experiences for over 15 years. We don't just sell properties; we create lifestyles and build communities where families thrive.
+                <p className="text-[#FFDBBB]/80 text-lg leading-relaxed mb-6">
+                  Crafting extraordinary real estate experiences for over 15 years. 
+                  We don't just sell properties; we create lifestyles and build communities 
+                  where families thrive.
                 </p>
               </motion.div>
 
@@ -105,178 +90,67 @@ const Footer = () => {
                 className="space-y-4"
               >
                 <div className="flex items-start space-x-3">
-                  <MapPinIcon className="h-5 w-5 text-amber-400 mt-1 flex-shrink-0" />
-                  <div className="text-blue-100">
-                    <p>123 Business Tower, Financial District</p>
-                    <p>Fortune one build co Pvt Ltd. 19/3 , Cunningham Road Bangalore 560001</p>
+                  <MapPinIcon className="h-5 w-5 text-[#CCBEB1] mt-1 flex-shrink-0" />
+                  <div className="text-[#FFDBBB]/80">
+                    <p>Fortune One Build Co Pvt Ltd.</p>
+                    <p>19/3, Cunningham Road</p>
+                    <p>Bangalore 560001</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <PhoneIcon className="h-5 w-5 text-amber-400 flex-shrink-0" />
-                  <p className="text-blue-100">+917996000533</p>
+                  <PhoneIcon className="h-5 w-5 text-[#CCBEB1] flex-shrink-0" />
+                  <p className="text-[#FFDBBB]/80">+91 79960 00533</p>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <EnvelopeIcon className="h-5 w-5 text-amber-400 flex-shrink-0" />
-                  <p className="text-blue-100">reach@fortuneone.co</p>
+                  <EnvelopeIcon className="h-5 w-5 text-[#CCBEB1] flex-shrink-0" />
+                  <p className="text-[#FFDBBB]/80">info@fortuneone.com</p>
                 </div>
               </motion.div>
             </div>
 
-            {/* Quick Links */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <h3 className="text-xl font-bold mb-6 flex items-center">
-                <BuildingOfficeIcon className="h-5 w-5 mr-2 text-amber-400" />
-                Company
-              </h3>
-              <ul className="space-y-3">
-                {footerLinks.company.map((link, index) => (
-                  <li key={index}>
-                    <Link 
-                      to={link.path}
-                      className="text-blue-100 hover:text-amber-400 transition-colors duration-200 hover:translate-x-2 inline-block transform"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              <h3 className="text-xl font-bold mb-6 flex items-center">
-                <HomeIcon className="h-5 w-5 mr-2 text-amber-400" />
-                Services
-              </h3>
-              <ul className="space-y-3">
-                {footerLinks.services.map((link, index) => (
-                  <li key={index}>
-                    <Link 
-                      to={link.path}
-                      className="text-blue-100 hover:text-amber-400 transition-colors duration-200 hover:translate-x-2 inline-block transform"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              <h3 className="text-xl font-bold mb-6 flex items-center">
-                <UsersIcon className="h-5 w-5 mr-2 text-amber-400" />
-                Support
-              </h3>
-              <ul className="space-y-3">
-                {footerLinks.support.map((link, index) => (
-                  <li key={index}>
-                    <Link 
-                      to={link.path}
-                      className="text-blue-100 hover:text-amber-400 transition-colors duration-200 hover:translate-x-2 inline-block transform"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              
-              {/* Social Links */}
-              <div className="mt-8">
-                <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
-                <div className="flex space-x-4">
-                  {socialLinks.map((social, index) => (
-                    <motion.a
-                      key={index}
-                      href={social.href}
-                      whileHover={{ scale: 1.2, rotate: 5 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-amber-400/20 transition-all duration-300"
-                      title={social.name}
-                    >
-                      <span className="text-lg">{social.icon}</span>
-                    </motion.a>
+            {/* Footer Links */}
+            {Object.entries(footerLinks).map(([section, links], idx) => (
+              <motion.div
+                key={section}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 * (idx + 1) }}
+              >
+                <h3 className="text-xl font-semibold mb-4 capitalize">{section}</h3>
+                <ul className="space-y-3">
+                  {links.map((link) => (
+                    <li key={link.name}>
+                      <Link 
+                        to={link.path}
+                        className="text-[#FFDBBB]/80 hover:text-[#FFDBBB] transition-colors"
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
                   ))}
-                </div>
-              </div>
-            </motion.div>
+                </ul>
+              </motion.div>
+            ))}
           </div>
-        </div>
 
-        {/* Newsletter Section */}
-        <div className="border-t border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center"
-            >
-              <h3 className="text-2xl font-bold mb-4">Stay Updated</h3>
-              <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
-                Subscribe to our newsletter for the latest updates on new projects, market insights, and exclusive offers.
-              </p>
-              <div className="flex flex-col sm:flex-row max-w-md mx-auto">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-6 py-3 rounded-l-xl sm:rounded-r-none rounded-r-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                />
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-3 bg-gradient-to-r from-amber-400 to-yellow-600 text-gray-900 font-semibold rounded-r-xl sm:rounded-l-none rounded-l-xl hover:shadow-lg transition-all duration-300"
-                >
-                  Subscribe
-                </motion.button>
-              </div>
-            </motion.div>
+          {/* Social Links */}
+          <div className="mt-12 flex space-x-6 justify-center">
+            {socialLinks.map((social) => (
+              <motion.a
+                key={social.name}
+                href={social.href}
+                whileHover={{ scale: 1.2 }}
+                className="text-2xl"
+              >
+                {social.icon}
+              </motion.a>
+            ))}
           </div>
-        </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
-            >
-              <div className="text-blue-200 text-sm">
-                <p>&copy; 2025 Fortune One. All rights reserved.</p>
-              </div>
-              <div className="flex items-center space-x-6 text-sm text-blue-200">
-                <a href="#" className="hover:text-amber-400 transition-colors duration-200">
-                  Privacy Policy
-                </a>
-                <a href="#" className="hover:text-amber-400 transition-colors duration-200">
-                  Terms of Service
-                </a>
-                <a href="#" className="hover:text-amber-400 transition-colors duration-200">
-                  Cookie Policy
-                </a>
-              </div>
-              <div className="flex items-center text-blue-200 text-sm">
-                <span>Made By Chethana K R</span>
-              </div>
-            </motion.div>
-          </div>
+          <p className="mt-8 text-center text-sm text-[#FFDBBB]/60">
+            © {new Date().getFullYear()} Fortune One Build Co Pvt Ltd. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

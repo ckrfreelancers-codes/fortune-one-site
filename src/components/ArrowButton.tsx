@@ -10,7 +10,19 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({ direction, onClick }) => {
   return (
     <button
       onClick={onClick}
-      className="p-2 bg-[#1c2634] text-white rounded-full shadow-md hover:bg-amber-500 transition"
+      className="
+        p-3 
+        bg-[#1c2634] 
+        text-white 
+        rounded-full 
+        shadow-lg 
+        hover:bg-gradient-to-r 
+        hover:from-amber-400 
+        hover:to-yellow-600 
+        hover:text-gray-900
+        transition-all 
+        duration-300
+      "
     >
       {direction === "left" ? (
         <ChevronLeftIcon className="h-6 w-6" />

@@ -1,156 +1,117 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const AboutUs = () => {
-  const stats = [
-    { number: '15+', label: 'Years Experience' },
-    { number: '500+', label: 'Properties Sold' },
-    { number: '1000+', label: 'Happy Families' },
-    { number: '50+', label: 'Awards Won' },
+  const [loading, setLoading] = useState(true);
+
+  const sections = [
+    {
+      title: "Mission",
+      text: "To redefine the real estate experience by delivering exceptional properties, expert guidance, and comprehensive services. We focus on customer satisfaction, innovation, and transparency to ensure every client achieves their dream investment.",
+      image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=600&q=80",
+    },
+    {
+      title: "Vision",
+      text: "To be a global leader in real estate, providing world-class properties and seamless investment opportunities while enriching lives through personalized, innovative, and secure solutions.",
+      image: "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80",
+    },
+    {
+      title: "Values",
+      text: `Integrity: Upholding the highest ethical standards.\nCustomer-Centricity: Prioritizing our clients' needs.\nExcellence: Striving for superior quality in everything we do.\nInnovation: Embracing creativity and forward-thinking solutions.\nTrust: Building lasting relationships based on transparency and reliability.`,
+      image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=600&q=80",
+    },
   ];
 
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2000); // show loader for 2 seconds
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
   return (
-    <div className="min-h-screen pt-20">
+    <AnimatePresence>
+      <motion.div
+        className="fixed inset-0 bg-[#FFDBBB] flex items-center justify-center z-50"
+        initial={{ opacity: 1 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0, transition: { duration: 0.8 } }}
+      >
+        <motion.img
+          src="/Fortune One.png"
+          alt="Logo"
+          className="h-auto w-auto max-w-32 max-h-32" // keeps original scale, small size
+          animate={{ scale: [1, 1.1, 1] }} // subtle zoom effect
+          transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+        />
+      </motion.div>
+    </AnimatePresence>
+  );
+}
+
+
+  return (
+    <div className="min-h-screen bg-white py-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-10 left-10 w-72 h-72 bg-blue-500/30 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        </div>
-        
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
+      <section className="relative h-80 flex items-center justify-center text-center rounded-b-3xl bg-gradient-to-r from-[#FFDBBB] via-[#CCBEB1] to-[#997E67]">
+        <div className="relative z-10 max-w-3xl px-4">
+          <motion.h1
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
+            transition={{ duration: 1 }}
+            className="text-4xl md:text-5xl font-bold text-[#664930] drop-shadow-lg"
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              About 
-              <span className="bg-gradient-to-r from-amber-400 to-yellow-600 bg-clip-text text-transparent">
-                {' '}Fortune One
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
-              Crafting exceptional real estate experiences for over 15 years, we've redefined luxury living and helped thousands of families find their perfect homes.
-            </p>
+            Transforming Real Estate for Over 20 Years
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 1 }}
+            className="text-lg md:text-xl text-[#664930]/90 mt-4 leading-relaxed"
+          >
+            Fortune One Group was founded over two decades ago with a clear vision: to make real estate investment accessible and rewarding. Starting as a small team, we have grown into a global leader, offering innovative and diverse real estate solutions.
+          </motion.p>
+        </div>
+      </section>
+
+      {/* Mission / Vision / Values */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-20">
+        {sections.map((sec, index) => (
+          <motion.div
+            key={sec.title}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className={`flex flex-col lg:flex-row items-center gap-12 ${
+              index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+            }`}
+          >
+            <div className="lg:w-1/2 rounded-3xl overflow-hidden shadow-2xl">
+              <img
+                src={sec.image}
+                alt={sec.title}
+                className="w-full h-96 object-cover rounded-3xl"
+              />
+            </div>
+            <div className="lg:w-1/2 text-center lg:text-left">
+              <h3 className="text-3xl md:text-4xl font-bold text-[#664930] mb-4">{sec.title}</h3>
+              <p className="text-[#664930]/90 leading-relaxed whitespace-pre-line text-lg md:text-xl">{sec.text}</p>
+            </div>
           </motion.div>
-        </div>
+        ))}
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.5, rotateY: 90 }}
-                whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
-                viewport={{ once: true }}
-                transition={{ 
-                  duration: 0.8, 
-                  delay: index * 0.1,
-                  type: 'spring',
-                  stiffness: 100
-                }}
-                whileHover={{ 
-                  scale: 1.1, 
-                  rotateY: 10,
-                  z: 50
-                }}
-                className="text-center p-8 bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform perspective-1000"
-              >
-                <motion.div
-                  className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2"
-                  animate={{ scale: [1, 1.05, 1] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                >
-                  {stat.number}
-                </motion.div>
-                <div className="text-gray-600 font-medium">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Story Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-50 to-purple-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
-                Our Story of 
-                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  {' '}Excellence
-                </span>
-              </h2>
-              <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
-                <p>
-                  Founded with a vision to revolutionize the real estate industry, Fortune One has grown from a small family business to one of the most trusted names in luxury real estate.
-                </p>
-                <p>
-                  Our commitment to quality, innovation, and customer satisfaction has earned us recognition as industry leaders. We don't just sell properties; we create lifestyles and build communities where families thrive.
-                </p>
-                <p>
-                  With cutting-edge technology, sustainable practices, and unparalleled attention to detail, we continue to set new standards in premium real estate development.
-                </p>
-              </div>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, x: 50, rotateY: 30 }}
-              whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              whileHover={{ rotateY: -5, scale: 1.02 }}
-              className="relative"
-            >
-              <div className="aspect-w-16 aspect-h-12 rounded-2xl overflow-hidden shadow-2xl transform perspective-1000">
-                <img
-                  src="https://images.pexels.com/photos/1571463/pexels-photo-1571463.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                  alt="Premium building"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent"></div>
-              </div>
-              
-              {/* Floating elements */}
-              <motion.div
-                animate={{ 
-                  y: [0, -20, 0],
-                  rotate: [0, 5, 0]
-                }}
-                transition={{ 
-                  duration: 4, 
-                  repeat: Infinity,
-                  ease: 'easeInOut'
-                }}
-                className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl shadow-xl opacity-90"
-              />
-              
-              <motion.div
-                animate={{ 
-                  y: [0, 15, 0],
-                  rotate: [0, -3, 0]
-                }}
-                transition={{ 
-                  duration: 5, 
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                  delay: 1
-                }}
-                className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl shadow-lg opacity-80"
-              />
-            </motion.div>
-          </div>
-        </div>
+      {/* Call to Action */}
+      <section className="bg-[#FFDBBB] py-16 text-center rounded-t-3xl mt-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#664930] mb-6">
+          Your Dream Property Awaits
+        </h2>
+        <p className="text-lg md:text-xl text-[#664930]/90 max-w-3xl mx-auto mb-8">
+          Explore our diverse portfolio of apartments, villas, plots, and townships. Let us guide you in making an investment that shapes your future.
+        </p>
+        <button className="px-8 py-4 bg-[#664930] text-[#FFDBBB] font-bold rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300">
+          Explore Properties
+        </button>
       </section>
     </div>
   );
