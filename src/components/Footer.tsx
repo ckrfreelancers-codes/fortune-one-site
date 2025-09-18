@@ -40,18 +40,18 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-branddark text-white relative overflow-hidden">
+    <footer className="bg-gradient-to-b from-water via-lavender to-nyanza text-branddark relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute inset-0">
         <motion.div
           animate={{ rotate: [0, 360], scale: [1, 1.1, 1] }}
           transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
-          className="absolute top-20 right-20 w-40 h-40 border border-white/5 rounded-3xl"
+          className="absolute top-20 right-20 w-40 h-40 border border-white/20 rounded-3xl"
         />
         <motion.div
           animate={{ y: [0, -20, 0], opacity: [0.1, 0.3, 0.1] }}
           transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute bottom-20 left-20 w-60 h-60 bg-blue-500/10 rounded-full blur-3xl"
+          className="absolute bottom-20 left-20 w-60 h-60 bg-lavender/30 rounded-full blur-3xl"
         />
       </div>
 
@@ -71,13 +71,13 @@ const Footer = () => {
                 <Link to="/" className="flex items-center space-x-3 mb-6">
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: 5 }}
-                    className="w-12 h-12 bg-gradient-to-br from-amber-400 to-yellow-600 rounded-2xl flex items-center justify-center"
+                    className="w-12 h-12 bg-gradient-to-br from-water to-lavender rounded-2xl flex items-center justify-center shadow-md"
                   >
-                    <HomeIcon className="h-6 w-6 text-white" />
+                    <HomeIcon className="h-6 w-6 text-branddark" />
                   </motion.div>
                   <span className="text-2xl font-bold">Fortune One</span>
                 </Link>
-                <p className="text-brandlight text-lg leading-relaxed mb-6">
+                <p className="text-brandprimary text-lg leading-relaxed mb-6">
                   Crafting extraordinary real estate experiences for over 15 years. 
                   We don't just sell properties; we create lifestyles and build communities where families thrive.
                 </p>
@@ -92,19 +92,19 @@ const Footer = () => {
                 className="space-y-4"
               >
                 <div className="flex items-start space-x-3">
-                  <MapPinIcon className="h-5 w-5 text-amber-400 mt-1 flex-shrink-0" />
-                  <div className="text-brandlight">
+                  <MapPinIcon className="h-5 w-5 text-lavender mt-1 flex-shrink-0" />
+                  <div className="text-brandprimary">
                     <p>123 Business Tower, Financial District</p>
                     <p>Fortune One Build Co Pvt Ltd. 19/3, Cunningham Road, Bangalore 560001</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <PhoneIcon className="h-5 w-5 text-amber-400 flex-shrink-0" />
-                  <p className="text-brandlight">+91 79960 00533</p>
+                  <PhoneIcon className="h-5 w-5 text-lavender flex-shrink-0" />
+                  <p className="text-brandprimary">+91 79960 00533</p>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <EnvelopeIcon className="h-5 w-5 text-amber-400 flex-shrink-0" />
-                  <p className="text-brandlight">reach@fortuneone.co</p>
+                  <EnvelopeIcon className="h-5 w-5 text-lavender flex-shrink-0" />
+                  <p className="text-brandprimary">reach@fortuneone.co</p>
                 </div>
               </motion.div>
             </div>
@@ -117,7 +117,7 @@ const Footer = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <h3 className="text-xl font-bold mb-6 flex items-center">
-                <BuildingOfficeIcon className="h-5 w-5 mr-2 text-amber-400" />
+                <BuildingOfficeIcon className="h-5 w-5 mr-2 text-lavender" />
                 Company
               </h3>
               <ul className="space-y-3">
@@ -125,7 +125,7 @@ const Footer = () => {
                   <li key={index}>
                     <Link 
                       to={link.path}
-                      className="text-brandlight hover:text-amber-400 transition-colors duration-200 hover:translate-x-2 inline-block transform"
+                      className="text-brandprimary hover:text-lavender transition-colors duration-200 hover:translate-x-2 inline-block transform"
                     >
                       {link.name}
                     </Link>
@@ -141,7 +141,7 @@ const Footer = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <h3 className="text-xl font-bold mb-6 flex items-center">
-                <HomeIcon className="h-5 w-5 mr-2 text-amber-400" />
+                <HomeIcon className="h-5 w-5 mr-2 text-lavender" />
                 Services
               </h3>
               <ul className="space-y-3">
@@ -149,7 +149,7 @@ const Footer = () => {
                   <li key={index}>
                     <Link 
                       to={link.path}
-                      className="text-brandlight hover:text-amber-400 transition-colors duration-200 hover:translate-x-2 inline-block transform"
+                      className="text-brandprimary hover:text-lavender transition-colors duration-200 hover:translate-x-2 inline-block transform"
                     >
                       {link.name}
                     </Link>
@@ -165,7 +165,7 @@ const Footer = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <h3 className="text-xl font-bold mb-6 flex items-center">
-                <UsersIcon className="h-5 w-5 mr-2 text-amber-400" />
+                <UsersIcon className="h-5 w-5 mr-2 text-lavender" />
                 Support
               </h3>
               <ul className="space-y-3">
@@ -173,7 +173,7 @@ const Footer = () => {
                   <li key={index}>
                     <Link 
                       to={link.path}
-                      className="text-brandlight hover:text-amber-400 transition-colors duration-200 hover:translate-x-2 inline-block transform"
+                      className="text-brandprimary hover:text-lavender transition-colors duration-200 hover:translate-x-2 inline-block transform"
                     >
                       {link.name}
                     </Link>
@@ -191,7 +191,7 @@ const Footer = () => {
                       href={social.href}
                       whileHover={{ scale: 1.2, rotate: 5 }}
                       whileTap={{ scale: 0.9 }}
-                      className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-amber-400/20 transition-all duration-300"
+                      className="w-10 h-10 bg-white/40 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-lavender/40 transition-all duration-300"
                       title={social.name}
                     >
                       <span className="text-lg">{social.icon}</span>
@@ -204,7 +204,7 @@ const Footer = () => {
         </div>
 
         {/* Newsletter Section */}
-        <div className="border-t border-white/10">
+        <div className="border-t border-white/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -214,19 +214,19 @@ const Footer = () => {
               className="text-center"
             >
               <h3 className="text-2xl font-bold mb-4">Stay Updated</h3>
-              <p className="text-brandlight mb-8 max-w-2xl mx-auto">
+              <p className="text-brandprimary mb-8 max-w-2xl mx-auto">
                 Subscribe to our newsletter for the latest updates on new projects, market insights, and exclusive offers.
               </p>
               <div className="flex flex-col sm:flex-row max-w-md mx-auto">
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 px-6 py-3 rounded-l-xl sm:rounded-r-none rounded-r-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-brandlight focus:outline-none focus:ring-2 focus:ring-amber-400"
+                  className="flex-1 px-6 py-3 rounded-l-xl sm:rounded-r-none rounded-r-xl bg-white/60 border border-white/40 text-branddark placeholder-brandprimary focus:outline-none focus:ring-2 focus:ring-lavender"
                 />
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-3 bg-gradient-to-r from-amber-400 to-yellow-600 text-gray-900 font-semibold rounded-r-xl sm:rounded-l-none rounded-l-xl hover:shadow-lg transition-all duration-300"
+                  className="px-8 py-3 bg-gradient-to-r from-lavender to-water text-branddark font-semibold rounded-r-xl sm:rounded-l-none rounded-l-xl hover:shadow-lg transition-all duration-300"
                 >
                   Subscribe
                 </motion.button>
@@ -236,7 +236,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10">
+        <div className="border-t border-white/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <motion.div
               initial={{ opacity: 0 }}
@@ -245,21 +245,21 @@ const Footer = () => {
               transition={{ duration: 0.6 }}
               className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
             >
-              <div className="text-brandlight text-sm">
+              <div className="text-brandprimary text-sm">
                 <p>&copy; 2025 Fortune One. All rights reserved.</p>
               </div>
-              <div className="flex items-center space-x-6 text-sm text-brandlight">
-                <a href="#" className="hover:text-amber-400 transition-colors duration-200">
+              <div className="flex items-center space-x-6 text-sm text-brandprimary">
+                <a href="#" className="hover:text-lavender transition-colors duration-200">
                   Privacy Policy
                 </a>
-                <a href="#" className="hover:text-amber-400 transition-colors duration-200">
+                <a href="#" className="hover:text-lavender transition-colors duration-200">
                   Terms of Service
                 </a>
-                <a href="#" className="hover:text-amber-400 transition-colors duration-200">
+                <a href="#" className="hover:text-lavender transition-colors duration-200">
                   Cookie Policy
                 </a>
               </div>
-              <div className="flex items-center text-brandlight text-sm">
+              <div className="flex items-center text-brandprimary text-sm">
                 <span>Made By Chethana K R</span>
               </div>
             </motion.div>

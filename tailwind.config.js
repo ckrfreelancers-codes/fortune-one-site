@@ -4,15 +4,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        branddark: "#3E2C1C",      // Rich brown (primary brand dark)
-        brandprimary: "#6B4226",   // Deep earthy brown
-        brandlight: "#D4A373",     // Warm golden beige
-        brandgold: "#F5C518",      // Fortune golden highlight
-        brandgreen: "#4CAF50",     // Eco-friendly green
-        brandwhite: "#ffffff",
-        brandoffwhite: "#f8f9fb",
-      },
-    },
+        branddark: "#0f1d3d",   // contrast navy for text
+        nyanza: "#E8FBE1",
+        lavender: "#ECE3FC",
+        lavenderblush: "#FCEBF6",
+        cornsilk: "#FAF8DF",
+        water: "#DDF2FD",
+        platinum: "#DEE0E4",
+      }
+    }
   },
   plugins: [],
 };

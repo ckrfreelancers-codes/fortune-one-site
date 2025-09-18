@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
   return (
     <>
       {/* Header */}
-      <header className="fixed top-0 left-0 w-full bg-branddark text-white z-50 shadow-md">
+      <header className="fixed top-0 left-0 w-full bg-gradient-to-r from-water to-lavender text-branddark z-50 shadow-md">
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
           {/* Logo */}
           <Link to="/" onClick={closeMenu} className="flex items-center space-x-3">
@@ -42,7 +42,7 @@ const Navbar: React.FC = () => {
           <button
             aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen(!open)}
-            className="p-2 rounded-md hover:bg-brandprimary/20 transition ml-auto font-semibold text-lg"
+            className="p-2 rounded-md bg-lavenderblush text-branddark hover:bg-cornsilk transition ml-auto font-semibold text-lg"
           >
             {open ? <X size={22} /> : "Menu"}
           </button>
@@ -51,20 +51,22 @@ const Navbar: React.FC = () => {
 
       {/* Dim background (only when open) */}
       <div
-        className={`fixed inset-0 bg-black transition-opacity duration-300 ${open ? "opacity-50 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+        className={`fixed inset-0 bg-black transition-opacity duration-300 ${
+          open ? "opacity-50 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
         onClick={closeMenu}
         aria-hidden={!open}
       />
 
       {/* Side panel */}
       <aside
-        className={`fixed top-0 right-0 h-full w-80 bg-branddark text-white z-50 transform transition-transform duration-400 ${
+        className={`fixed top-0 right-0 h-full w-80 bg-gradient-to-b from-water to-nyanza text-branddark z-50 transform transition-transform duration-400 ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
         aria-hidden={!open}
       >
         <div className="px-6 pt-16">
-          {/* Only menu items, no image or "Project" word */}
+          {/* Only menu items */}
           <nav>
             <ul className="flex flex-col space-y-4">
               {menuItems.map((item, idx) => (
@@ -79,7 +81,7 @@ const Navbar: React.FC = () => {
                   <Link
                     to={item.to}
                     onClick={closeMenu}
-                    className="block hover:text-brandlight transition-colors"
+                    className="block text-lg font-medium hover:text-lavender transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -89,7 +91,7 @@ const Navbar: React.FC = () => {
           </nav>
 
           {/* Contact block */}
-          <div className="mt-8 text-sm text-gray-200">
+          <div className="mt-8 text-sm text-branddark">
             <h4 className="font-semibold mb-2">Head Office</h4>
             <p>19/3 Cunningham Road, Bengaluru 560001</p>
             <p className="mt-2">Call: +91 79960 00533</p>
@@ -101,7 +103,7 @@ const Navbar: React.FC = () => {
         <div className="absolute bottom-6 left-6 right-6">
           <button
             onClick={closeMenu}
-            className="w-full py-2 bg-brandprimary text-white rounded-md hover:bg-brandlight transition"
+            className="w-full py-2 bg-lavender text-branddark rounded-md hover:bg-lavenderblush transition"
           >
             Close Menu
           </button>
