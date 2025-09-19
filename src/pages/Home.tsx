@@ -282,13 +282,17 @@ const Home = () => {
           </motion.h2>
 
           <motion.p
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 1 }}
-            className="text-xl md:text-2xl text-[#FFDBBB]/90 mb-12 max-w-3xl mx-auto leading-relaxed"
-          >
-            With more than 10 years of experience and 10,000+ satisfied clients, Fortune One Group delivers safe, secure, and seamless real estate solutions. Explore exceptional properties domestically and internationally, and let us guide you to unforgettable investments!
-          </motion.p>
+  initial={{ opacity: 0, x: -50 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ delay: 0.3, duration: 1 }}
+  className="relative text-lg md:text-xl text-[#FFDBBB]/95 mb-12 max-w-3xl mx-auto pl-6 border-l-4 border-[#FFD28F] leading-relaxed"
+>
+  With more than <span className="font-semibold text-[#FFD28F]">10 years of experience</span> and 
+  <span className="font-semibold text-[#FFD28F]"> 10,000+ satisfied clients</span>,  
+  <span className="font-cursive text-[#FFE6C7]"> Fortune One Group</span> delivers safe, secure, 
+  and seamless real estate solutions. Explore exceptional properties domestically and internationally,  
+  and let us guide you to <span className="italic text-[#FFD28F]">unforgettable investments!</span>
+</motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 50 }}

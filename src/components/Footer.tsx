@@ -75,9 +75,7 @@ const Footer = () => {
                   <span className="text-2xl font-bold text-[#FFDBBB]">Fortune One</span>
                 </Link>
                 <p className="text-[#FFDBBB]/80 text-lg leading-relaxed mb-6">
-                  Crafting extraordinary real estate experiences for over 10+ years. 
-                  We don't just sell properties; we create lifestyles and build communities 
-                  where families thrive.
+                  Safe, Secure & Memorable Real Estate Experiences!
                 </p>
               </motion.div>
 

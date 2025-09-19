@@ -33,12 +33,7 @@ const ContactUs = () => {
       phone: '+917996000533',
       image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800'
     },
-    {
-      city: 'Delhi',
-      address: '456 Corporate Plaza, Connaught Place',
-      phone: '+91 98765 43211',
-      image: 'https://images.pexels.com/photos/3182834/pexels-photo-3182834.jpeg?auto=compress&cs=tinysrgb&w=800'
-    },
+   
     {
       city: 'Bangalore',
       address: '789 Tech Park, Electronic City',

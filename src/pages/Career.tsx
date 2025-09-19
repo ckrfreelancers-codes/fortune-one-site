@@ -27,12 +27,12 @@ const Career = () => {
   ];
 
   const openings = [
-    { title: 'Senior Sales Manager', department: 'Sales', location: 'Mumbai', type: 'Full-time', experience: '5+ years' },
+    { title: 'Senior Sales Manager', department: 'Sales', location: 'Bangalore', type: 'Full-time', experience: '5+ years' },
     { title: 'Marketing Specialist', department: 'Marketing', location: 'Bangalore', type: 'Full-time', experience: '3+ years' },
-    { title: 'Project Manager', department: 'Operations', location: 'Delhi', type: 'Full-time', experience: '7+ years' },
+    { title: 'Project Manager', department: 'Operations', location: 'Bangalore', type: 'Full-time', experience: '7+ years' },
     { title: 'Customer Relations Executive', department: 'Customer Service', location: 'Pune', type: 'Full-time', experience: '2+ years' },
-    { title: 'Financial Analyst', department: 'Finance', location: 'Hyderabad', type: 'Full-time', experience: '4+ years' },
-    { title: 'Legal Advisor', department: 'Legal', location: 'Chennai', type: 'Full-time', experience: '6+ years' }
+    { title: 'Financial Analyst', department: 'Finance', location: 'Bangalore', type: 'Full-time', experience: '4+ years' },
+    { title: 'Legal Advisor', department: 'Legal', location: 'Bangalore', type: 'Full-time', experience: '6+ years' }
   ];
 
   return (
@@ -100,6 +100,7 @@ const Career = () => {
                 whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.1, type: 'spring' }}
+
                 whileHover={{ y: -15, rotateY: 10, scale: 1.05 }}
                 className="bg-gradient-to-br from-[#F5ECE5] to-[#E8D7C9] p-6 rounded-2xl shadow-lg hover:shadow-2xl text-center"
               >
