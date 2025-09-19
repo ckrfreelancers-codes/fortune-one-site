@@ -3,6 +3,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDownIcon, PlayIcon, SparklesIcon } from "@heroicons/react/24/outline";
 import { useInView } from "react-intersection-observer";
 
+// Swiper imports for gallery
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
 const Home = () => {
   const [loading, setLoading] = useState(true);
 
@@ -28,7 +35,7 @@ const Home = () => {
 
   // Loader effect
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000); // 2 seconds loader
+    const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -81,7 +88,7 @@ const Home = () => {
           exit={{ opacity: 0, transition: { duration: 0.8 } }}
         >
           <motion.img
-            src="/Fortune One.png" // replace with your logo path
+            src="/Fortune One.png"
             alt="Logo"
             className="w-auto h-auto max-w-32 max-h-32"
             animate={{ scale: [1, 1.1, 1] }}
@@ -154,10 +161,7 @@ const Home = () => {
             >
               <motion.h1
                 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold mb-6 leading-tight"
-                style={{
-                  color: '#FFDBBB',
-                  textShadow: '0 6px 25px rgba(0,0,0,0.6)',
-                }}
+                style={{ color: '#FFDBBB', textShadow: '0 6px 25px rgba(0,0,0,0.6)' }}
               >
                 Fortune One
               </motion.h1>
@@ -199,11 +203,7 @@ const Home = () => {
               className="flex flex-col sm:flex-row gap-6 justify-center items-center"
             >
               <motion.button
-                whileHover={{
-                  scale: 1.05,
-                  y: -5,
-                  boxShadow: '0 20px 40px rgba(102,73,48,0.3)'
-                }}
+                whileHover={{ scale: 1.05, y: -5, boxShadow: '0 20px 40px rgba(102,73,48,0.3)' }}
                 whileTap={{ scale: 0.95 }}
                 className="group px-10 py-5 bg-gradient-to-r from-[#664930] to-[#997E67] text-[#FFDBBB] font-bold text-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center space-x-3"
               >
@@ -212,11 +212,7 @@ const Home = () => {
               </motion.button>
 
               <motion.button
-                whileHover={{
-                  scale: 1.05,
-                  y: -5,
-                  backgroundColor: 'rgba(255,219,187,0.1)'
-                }}
+                whileHover={{ scale: 1.05, y: -5, backgroundColor: 'rgba(255,219,187,0.1)' }}
                 whileTap={{ scale: 0.95 }}
                 className="group px-10 py-5 border-2 border-[#FFDBBB]/60 text-[#FFDBBB] font-semibold text-lg rounded-2xl backdrop-blur-sm hover:border-[#FFDBBB] transition-all duration-300 flex items-center space-x-3"
               >
@@ -270,29 +266,29 @@ const Home = () => {
         ref={statsRef}
         className="relative py-20 bg-gradient-to-br from-[#664930]/90 via-[#997E67]/80 to-[#CCBEB1]/70 perspective-1000"
       >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-8xl mx-auto px-6 sm:px-7 lg:px-9 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-4xl md:text-5xl font-bold text-[#FFDBBB] mb-6"
+            className="text-4xl md:text-4xl font-bold text-[#FFDBBB] mb-6"
             style={{ textShadow: "0 2px 10px rgba(0,0,0,0.5)" }}
           >
             Embark on Your Dream Property with Fortune One
           </motion.h2>
 
           <motion.p
-  initial={{ opacity: 0, x: -50 }}
-  animate={{ opacity: 1, x: 0 }}
-  transition={{ delay: 0.3, duration: 1 }}
-  className="relative text-lg md:text-xl text-[#FFDBBB]/95 mb-12 max-w-3xl mx-auto pl-6 border-l-4 border-[#FFD28F] leading-relaxed"
->
-  With more than <span className="font-semibold text-[#FFD28F]">10 years of experience</span> and 
-  <span className="font-semibold text-[#FFD28F]"> 10,000+ satisfied clients</span>,  
-  <span className="font-cursive text-[#FFE6C7]"> Fortune One Group</span> delivers safe, secure, 
-  and seamless real estate solutions. Explore exceptional properties domestically and internationally,  
-  and let us guide you to <span className="italic text-[#FFD28F]">unforgettable investments!</span>
-</motion.p>
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3, duration: 1 }}
+            className="relative text-lg md:text-xl text-[#FFDBBB]/95 mb-12 max-w-3xl mx-auto pl-6 border-l-4 border-[#FFD28F] leading-relaxed"
+          >
+            With more than <span className="font-semibold text-[#FFD28F]">10 years of experience</span> and 
+            <span className="font-semibold text-[#FFD28F]"> 10,000+ satisfied clients</span>,  
+            <span className="font-cursive text-[#FFE6C7]"> Fortune One Group</span> delivers safe, secure, 
+            and seamless real estate solutions. Explore exceptional properties domestically and internationally,  
+            and let us guide you to <span className="italic text-[#FFD28F]">unforgettable investments!</span>
+          </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -361,6 +357,58 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* ===== Apartment Gallery Section ===== */}
+      <section className="relative py-20 bg-[#f9f5f1]">
+        <div className="max-w-[90%] mx-auto text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className="text-4xl md:text-5xl font-bold text-[#664930] mb-8"
+          >
+            Explore Our Luxury Apartment Gallery
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 1 }}
+            className="text-lg md:text-xl text-[#664930]/80 mb-12 max-w-3xl mx-auto leading-relaxed"
+          >
+            Discover stunning apartments with modern designs and premium amenities. Swipe through to get a glimpse of your future home.
+          </motion.p>
+
+          <Swiper
+            modules={[Autoplay, Pagination, Navigation]}
+            spaceBetween={20}
+            slidesPerView={1}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            pagination={{ clickable: true }}
+            navigation={true}
+            loop={true}
+            className="rounded-2xl overflow-hidden shadow-xl"
+          >
+            {[
+              "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
+              "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&w=1600&q=80",
+              "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&w=1600&q=80",
+              "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&w=1600&q=80"
+            ].map((img, i) => (
+              <SwiperSlide key={i}>
+                <img
+                  src={img}
+                  alt={`Apartment ${i + 1}`}
+                  className="w-full h-[500px] object-cover rounded-2xl"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </section>
+
     </div>
   );
 };
