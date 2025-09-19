@@ -43,11 +43,12 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <motion.img
-              src="/Fortune One.png"
-              alt="Fortune One Logo"
-              whileHover={{ scale: 1.05, rotate: 2 }}
-              className="h-10 w-auto object-contain"
-            />
+  src="/Fortune One.png"
+  alt="Fortune One Logo"
+  whileHover={{ scale: 1.08, rotate: 1 }}
+  className="h-16 md:h-20 w-auto object-contain drop-shadow-lg"
+/>
+
           </Link>
 
           {/* Desktop Navigation */}

@@ -18,10 +18,19 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://yourwebsite.com" />
 
-    <!-- Tailwind already included via PostCSS, no need to add here -->
+    <!-- Google Font for cursive style -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
   </head>
   <body class="bg-brandlight text-gray-900">
-    <div id="root"></div>
+    <div id="root">
+      <section class="max-w-3xl mx-auto py-16 px-6">
+        <p class="font-cursive text-branddark text-2xl leading-relaxed text-center">
+          Fortune One Group was founded over two decades ago with a clear vision:
+          to make real estate investment accessible and rewarding. Starting as a small team,
+          we have grown into a global leader, offering innovative and diverse real estate solutions.
+        </p>
+      </section>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

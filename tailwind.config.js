@@ -7,6 +7,9 @@ module.exports = {
         brandlight: "#5781ab", // Light blue
         branddark: "#2f4669",  // Dark navy
       },
+      fontFamily: {
+        cursive: ['"Dancing Script"', "cursive"], // Custom cursive font
+      },
     },
   },
   plugins: [],
