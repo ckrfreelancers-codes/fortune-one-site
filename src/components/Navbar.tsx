@@ -34,14 +34,14 @@ const Navbar = () => {
   animate={{ y: 0 }}
   className={`fixed w-full z-50 transition-all duration-300 ${
     scrolled
-      ? 'bg-[#997E67]/40 backdrop-blur-lg shadow-lg border-b border-[#CCBEB1]/30'
-      : 'bg-[#997E67]/20 backdrop-blur-md'
+      ? 'bg-[#997E67]/30 backdrop-blur-lg shadow-lg border-b border-[#CCBEB1]/20'
+      : 'bg-transparent backdrop-blur-sm'
   }`}
 >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2 flex-shrink-0">
             <motion.img
   src="/Fortune One.png"
   alt="Fortune One Logo"
@@ -52,17 +52,17 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-6 ml-auto">
             {navItems.map((item) => (
               <Link key={item.path} to={item.path}>
                 <motion.div
                   whileHover={{ y: -2, scale: 1.05 }}
-                  className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full ${
+                  className={`relative px-3 py-2 text-sm font-medium transition-all duration-300 rounded-full backdrop-blur-sm ${
                     location.pathname === item.path
-                      ? 'text-[#FFDBBB] bg-[#664930] shadow-lg'
+                      ? 'text-[#FFDBBB] bg-[#664930]/80 shadow-lg'
                       : scrolled
-                      ? 'text-[#FFDBBB] hover:text-white hover:bg-[#664930]/20'
-                      : 'text-[#664930] hover:text-[#997E67] hover:bg-[#FFDBBB]/30'
+                      ? 'text-[#FFDBBB] hover:text-white hover:bg-[#664930]/30'
+                      : 'text-white hover:text-[#FFDBBB] hover:bg-[#664930]/30 drop-shadow-lg'
                   }`}
                 >
                   {item.name}
@@ -82,8 +82,8 @@ const Navbar = () => {
             <motion.button
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsOpen(!isOpen)}
-              className={`p-2 rounded-md transition-colors duration-200 ${
-                scrolled ? 'text-[#FFDBBB] hover:bg-[#664930]/20' : 'text-[#664930] hover:bg-[#FFDBBB]/30'
+              className={`p-2 rounded-md transition-colors duration-200 backdrop-blur-sm ${
+                scrolled ? 'text-[#FFDBBB] hover:bg-[#664930]/30' : 'text-white hover:bg-[#664930]/30 drop-shadow-lg'
               }`}
             >
               {isOpen ? (
@@ -102,7 +102,7 @@ const Navbar = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="lg:hidden bg-[#997E67]/95 backdrop-blur-md border-t border-[#CCBEB1]/30"
+          className="lg:hidden bg-[#997E67]/90 backdrop-blur-md border-t border-[#CCBEB1]/30"
         >
           <div className="px-4 py-6 space-y-4">
             {navItems.map((item) => (
@@ -112,8 +112,8 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
                 className={`block px-4 py-3 text-base font-medium rounded-xl transition-all duration-200 ${
                   location.pathname === item.path
-                    ? 'text-[#FFDBBB] bg-[#664930] shadow-lg'
-                    : 'text-[#FFDBBB] hover:text-white hover:bg-[#664930]/30'
+                    ? 'text-[#FFDBBB] bg-[#664930]/80 shadow-lg'
+                    : 'text-[#FFDBBB] hover:text-white hover:bg-[#664930]/40'
                 }`}
               >
                 {item.name}

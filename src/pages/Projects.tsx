@@ -1,70 +1,104 @@
+import { useState } from 'react';
 import React from 'react';
 import { motion } from 'framer-motion';
 import ProjectCard from '../components/ProjectCard';
 
 const Projects = () => {
+  const [showSiteVisitForm, setShowSiteVisitForm] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    project: '',
+    preferredDate: '',
+    message: ''
+  });
+
   const projects = [
     {
       id: 1,
-      title: 'Skyline Residences',
-      location: 'Downtown Metropolitan',
+      title: 'Fortune One Grandeur',
+      location: 'Whitefield, Bangalore',
       price: 'Starting ₹2.5 Cr',
       type: 'Luxury Apartments',
-      image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80',
       status: 'Available',
       features: ['3-4 BHK', 'Smart Home', 'Gym & Pool', 'Parking']
     },
     {
       id: 2,
-      title: 'Garden Villas',
-      location: 'Green Valley Estate',
+      title: 'Fortune One Elite Villas',
+      location: 'Sarjapur Road, Bangalore',
       price: 'Starting ₹3.8 Cr',
       type: 'Premium Villas',
-      image: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80',
       status: 'Selling Fast',
       features: ['4-5 BHK', 'Private Garden', 'Club House', '24/7 Security']
     },
     {
       id: 3,
-      title: 'Marina Heights',
-      location: 'Waterfront District',
+      title: 'Fortune One Skyline',
+      location: 'Electronic City, Bangalore',
       price: 'Starting ₹4.2 Cr',
       type: 'Penthouse Suites',
-      image: 'https://images.pexels.com/photos/1571463/pexels-photo-1571463.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80',
       status: 'Pre-Launch',
       features: ['3-4 BHK', 'Sea View', 'Private Elevator', 'Concierge']
     },
     {
       id: 4,
-      title: 'Tech Park Commons',
-      location: 'IT Corridor',
+      title: 'Fortune One Tech Park',
+      location: 'Marathahalli, Bangalore',
       price: 'Starting ₹1.8 Cr',
       type: 'Smart Apartments',
-      image: 'https://images.pexels.com/photos/1571453/pexels-photo-1571453.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80',
       status: 'Available',
       features: ['2-3 BHK', 'Co-working Space', 'EV Charging', 'High-Speed Internet']
     },
     {
       id: 5,
-      title: 'Heritage Manor',
-      location: 'Old Town District',
+      title: 'Fortune One Heritage',
+      location: 'Koramangala, Bangalore',
       price: 'Starting ₹5.5 Cr',
       type: 'Luxury Mansions',
-      image: 'https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80',
       status: 'Exclusive',
       features: ['5-7 BHK', 'Heritage Design', 'Wine Cellar', 'Home Theater']
     },
     {
       id: 6,
-      title: 'Eco Green Towers',
-      location: 'Sustainable City',
+      title: 'Fortune One Eco Homes',
+      location: 'Hennur Road, Bangalore',
       price: 'Starting ₹2.1 Cr',
       type: 'Eco-Friendly Homes',
-      image: 'https://images.pexels.com/photos/1571471/pexels-photo-1571471.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      image: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?auto=format&fit=crop&w=1200&q=80',
       status: 'Coming Soon',
       features: ['2-4 BHK', 'Solar Panels', 'Rainwater Harvesting', 'Organic Gardens']
     }
   ];
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission here
+    console.log('Site visit form submitted:', formData);
+    alert('Thank you! We will contact you soon to schedule your site visit.');
+    setShowSiteVisitForm(false);
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      project: '',
+      preferredDate: '',
+      message: ''
+    });
+  };
 
   return (
     <div className="min-h-screen pt-20 bg-gradient-to-br from-[#FFDBBB] via-[#CCBEB1] to-[#997E67]">
@@ -260,6 +294,7 @@ const Projects = () => {
               <motion.button
                 whileHover={{ scale: 1.05, y: -5 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => setShowSiteVisitForm(true)}
                 className="px-10 py-4 bg-gradient-to-r from-[#FFDBBB] to-[#CCBEB1] text-[#664930] font-bold text-lg rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 Schedule Site Visit
@@ -275,6 +310,151 @@ const Projects = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Site Visit Form Modal */}
+      {showSiteVisitForm && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          onClick={() => setShowSiteVisitForm(false)}
+        >
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            className="bg-white rounded-2xl p-8 max-w-md w-full max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-2xl font-bold text-[#664930]">Schedule Site Visit</h3>
+              <button
+                onClick={() => setShowSiteVisitForm(false)}
+                className="text-gray-500 hover:text-gray-700 text-2xl"
+              >
+                ×
+              </button>
+            </div>
+
+            <form onSubmit={handleFormSubmit} className="space-y-4">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-[#664930] mb-2">
+                  Full Name *
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-3 border border-[#CCBEB1] rounded-xl focus:ring-2 focus:ring-[#997E67] focus:border-transparent"
+                  placeholder="Enter your full name"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-[#664930] mb-2">
+                  Email Address *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-3 border border-[#CCBEB1] rounded-xl focus:ring-2 focus:ring-[#997E67] focus:border-transparent"
+                  placeholder="Enter your email"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="phone" className="block text-sm font-medium text-[#664930] mb-2">
+                  Phone Number *
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-3 border border-[#CCBEB1] rounded-xl focus:ring-2 focus:ring-[#997E67] focus:border-transparent"
+                  placeholder="Enter your phone number"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="project" className="block text-sm font-medium text-[#664930] mb-2">
+                  Interested Project
+                </label>
+                <select
+                  id="project"
+                  name="project"
+                  value={formData.project}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 border border-[#CCBEB1] rounded-xl focus:ring-2 focus:ring-[#997E67] focus:border-transparent"
+                >
+                  <option value="">Select a project</option>
+                  {projects.map((project) => (
+                    <option key={project.id} value={project.title}>
+                      {project.title}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div>
+                <label htmlFor="preferredDate" className="block text-sm font-medium text-[#664930] mb-2">
+                  Preferred Visit Date
+                </label>
+                <input
+                  type="date"
+                  id="preferredDate"
+                  name="preferredDate"
+                  value={formData.preferredDate}
+                  onChange={handleInputChange}
+                  min={new Date().toISOString().split('T')[0]}
+                  className="w-full px-4 py-3 border border-[#CCBEB1] rounded-xl focus:ring-2 focus:ring-[#997E67] focus:border-transparent"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-[#664930] mb-2">
+                  Additional Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  rows={3}
+                  className="w-full px-4 py-3 border border-[#CCBEB1] rounded-xl focus:ring-2 focus:ring-[#997E67] focus:border-transparent resize-none"
+                  placeholder="Any specific requirements or questions?"
+                />
+              </div>
+
+              <div className="flex gap-4 pt-4">
+                <button
+                  type="button"
+                  onClick={() => setShowSiteVisitForm(false)}
+                  className="flex-1 py-3 border-2 border-[#CCBEB1] text-[#664930] font-semibold rounded-xl hover:bg-[#CCBEB1]/20 transition-colors"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="flex-1 py-3 bg-gradient-to-r from-[#664930] to-[#997E67] text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300"
+                >
+                  Schedule Visit
+                </button>
+              </div>
+            </form>
+          </motion.div>
+        </motion.div>
+      )}
     </div>
   );
 };

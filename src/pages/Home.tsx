@@ -82,18 +82,28 @@ const Home = () => {
     return (
       <AnimatePresence>
         <motion.div
-          className="fixed inset-0 bg-[#FFDBBB] flex items-center justify-center z-50"
+          className="fixed inset-0 bg-transparent backdrop-blur-sm flex items-center justify-center z-50"
           initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.8 } }}
         >
-          <motion.img
-            src="/Fortune One.png"
-            alt="Logo"
-            className="w-auto h-auto max-w-32 max-h-32"
-            animate={{ scale: [1, 1.1, 1] }}
-            transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-          />
+          <div className="text-center">
+            <motion.img
+              src="/Fortune One.png"
+              alt="Fortune One Logo"
+              className="w-auto h-auto max-w-40 max-h-40 mb-4 drop-shadow-2xl"
+              animate={{ scale: [1, 1.1, 1] }}
+              transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+            />
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="text-2xl font-bold text-[#664930] drop-shadow-lg"
+            >
+              Loading...
+            </motion.div>
+          </div>
         </motion.div>
       </AnimatePresence>
     );
@@ -120,7 +130,19 @@ const Home = () => {
                 alt={image.title}
                 className="h-full w-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#664930]/20 via-[#997E67]/20 to-[#CCBEB1]/20 z-0" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#664930]/40 via-[#997E67]/30 to-[#CCBEB1]/40 z-0" />
+              
+              {/* Clear text overlay on images */}
+              <div className="absolute inset-0 flex items-center justify-center z-10">
+                <div className="text-center bg-black/20 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-4">
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-2 drop-shadow-lg">
+                    {image.title}
+                  </h2>
+                  <p className="text-lg md:text-xl text-white/90 drop-shadow-md">
+                    {image.subtitle}
+                  </p>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>

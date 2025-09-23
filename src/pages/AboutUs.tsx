@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -127,9 +128,15 @@ const AboutUs = () => {
           Explore our diverse portfolio of apartments, villas, plots, and townships. 
           Let us guide you in making an investment that shapes your future.
         </p>
-        <button className="px-8 py-4 bg-[#664930] text-[#FFDBBB] font-bold rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300">
-          Explore Properties
-        </button>
+        <Link to="/projects">
+          <motion.button 
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-8 py-4 bg-[#664930] text-[#FFDBBB] font-bold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300"
+          >
+            Explore Properties
+          </motion.button>
+        </Link>
       </section>
     </div>
   );
