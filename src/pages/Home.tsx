@@ -16,18 +16,18 @@ const Home = () => {
   const images = [
     {
       src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
-      title: "",
-      subtitle: ""
+      title: "Luxury Living",
+      subtitle: "Where Dreams Meet Reality"
     },
     {
       src: "https://images.unsplash.com/photo-1502003148287-a82ef80a6abc?auto=format&fit=crop&w=1600&q=80",
-      title: "",
-      subtitle: ""
+      title: "Premium Properties",
+      subtitle: "Crafted for Excellence"
     },
     {
       src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80",
-      title: "",
-      subtitle: ""
+      title: "Investment Opportunities",
+      subtitle: "Your Future Starts Here"
     }
   ];
 
