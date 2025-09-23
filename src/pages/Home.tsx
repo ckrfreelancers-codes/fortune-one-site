@@ -148,29 +148,8 @@ const Home = () => {
         </div>
 
         {/* Floating Particles */}
-        <div className="absolute inset-0 z-10">
-          {[...Array(6)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-2 h-2 bg-[#FFDBBB]/30 rounded-full"
-              animate={{
-                y: [0, -100, 0],
-                x: [0, Math.sin(i) * 50, 0],
-                opacity: [0, 1, 0],
-              }}
-              transition={{
-                duration: 8 + i,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: i * 1.5,
-              }}
-              style={{
-                left: `${20 + i * 15}%`,
-                top: `${60 + i * 5}%`,
-              }}
-            />
-          ))}
-        </div>
+        
+          
 
         {/* Hero Content */}
         <div className="relative z-20 h-full flex items-center justify-center">
