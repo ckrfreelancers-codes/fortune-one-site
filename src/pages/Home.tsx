@@ -132,20 +132,7 @@ const Home = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-r from-[#664930]/40 via-[#997E67]/30 to-[#CCBEB1]/40 z-0" />
               
-              {/* Clear text overlay on images */}
-              <div className="absolute inset-0 flex items-center justify-center z-10">
-                <div className="text-center bg-black/20 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-4">
-                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-2 drop-shadow-lg">
-                    {image.title}
-                  </h2>
-                  <p className="text-lg md:text-xl text-white/90 drop-shadow-md">
-                    {image.subtitle}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+              
 
         {/* Floating Particles */}
         <div className="absolute inset-0 z-10">
