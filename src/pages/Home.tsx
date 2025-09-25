@@ -82,7 +82,7 @@ const Home = () => {
     return (
       <AnimatePresence>
         <motion.div
-          className="fixed inset-0 bg-transparent backdrop-blur-sm flex items-center justify-center z-50"
+          className="fixed inset-0 bg-transparent flex items-center justify-center z-50"
           initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.8 } }}
@@ -95,14 +95,6 @@ const Home = () => {
               animate={{ scale: [1, 1.1, 1] }}
               transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
             />
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-              className="text-2xl font-bold text-[#664930] drop-shadow-lg"
-            >
-              Loading...
-            </motion.div>
           </div>
         </motion.div>
       </AnimatePresence>
@@ -132,13 +124,13 @@ const Home = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-r from-[#664930]/40 via-[#997E67]/30 to-[#CCBEB1]/40 z-0" />
               
-              {/* Clear text overlay on images */}
+              {/* Enhanced text overlay on images with better contrast */}
               <div className="absolute inset-0 flex items-center justify-center z-10">
-                <div className="text-center bg-black/20 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-4">
-                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-2 drop-shadow-lg">
+                <div className="text-center bg-black/60 backdrop-blur-md rounded-2xl p-8 max-w-2xl mx-4 border border-white/20">
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-2 drop-shadow-2xl" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8)' }}>
                     {image.title}
                   </h2>
-                  <p className="text-lg md:text-xl text-white/90 drop-shadow-md">
+                  <p className="text-lg md:text-xl text-white drop-shadow-xl" style={{ textShadow: '0 2px 15px rgba(0,0,0,0.7)' }}>
                     {image.subtitle}
                   </p>
                 </div>
@@ -182,8 +174,8 @@ const Home = () => {
               className="mb-8"
             >
               <motion.h1
-                className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold mb-6 leading-tight"
-                style={{ color: '#FFDBBB', textShadow: '0 6px 25px rgba(0,0,0,0.6)' }}
+                className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold mb-6 leading-tight text-white"
+                style={{ textShadow: '0 8px 30px rgba(0,0,0,0.8), 0 4px 15px rgba(0,0,0,0.6)' }}
               >
                 Fortune One
               </motion.h1>
@@ -192,7 +184,8 @@ const Home = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5, duration: 1 }}
-                className="text-2xl sm:text-3xl md:text-4xl font-semibold text-[#FFDBBB] mb-4"
+                className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white mb-4"
+                style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8)' }}
               >
                 {images[currentImage].title}
               </motion.div>
@@ -201,7 +194,8 @@ const Home = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.8, duration: 1 }}
-                className="text-lg sm:text-xl md:text-2xl text-[#FFDBBB]/90 mb-8"
+                className="text-lg sm:text-xl md:text-2xl text-white/95 mb-8"
+                style={{ textShadow: '0 3px 15px rgba(0,0,0,0.7)' }}
               >
                 {images[currentImage].subtitle}
               </motion.p>
@@ -211,8 +205,8 @@ const Home = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.8 }}
-              className="text-lg sm:text-xl md:text-2xl text-[#FFDBBB]/80 mb-12 max-w-4xl mx-auto leading-relaxed"
-              style={{ textShadow: '0 2px 10px rgba(0,0,0,0.2)' }}
+              className="text-lg sm:text-xl md:text-2xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed"
+              style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8)' }}
             >
               Experience luxury living with our exclusive collection of premium properties.
               From modern penthouses to elegant villas, we transform dreams into reality.
@@ -227,16 +221,16 @@ const Home = () => {
               <motion.button
                 whileHover={{ scale: 1.05, y: -5, boxShadow: '0 20px 40px rgba(102,73,48,0.3)' }}
                 whileTap={{ scale: 0.95 }}
-                className="group px-10 py-5 bg-gradient-to-r from-[#664930] to-[#997E67] text-[#FFDBBB] font-bold text-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center space-x-3"
+                className="group px-10 py-5 bg-gradient-to-r from-[#664930] to-[#997E67] text-white font-bold text-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center space-x-3"
               >
                 <SparklesIcon className="h-6 w-6 group-hover:rotate-12 transition-transform duration-300" />
                 <span>Explore Properties</span>
               </motion.button>
 
               <motion.button
-                whileHover={{ scale: 1.05, y: -5, backgroundColor: 'rgba(255,219,187,0.1)' }}
+                whileHover={{ scale: 1.05, y: -5, backgroundColor: 'rgba(255,255,255,0.1)' }}
                 whileTap={{ scale: 0.95 }}
-                className="group px-10 py-5 border-2 border-[#FFDBBB]/60 text-[#FFDBBB] font-semibold text-lg rounded-2xl backdrop-blur-sm hover:border-[#FFDBBB] transition-all duration-300 flex items-center space-x-3"
+                className="group px-10 py-5 border-2 border-white/60 text-white font-semibold text-lg rounded-2xl backdrop-blur-sm hover:border-white transition-all duration-300 flex items-center space-x-3"
               >
                 <PlayIcon className="h-6 w-6 group-hover:translate-x-1 transition-transform duration-300" />
                 <span>Virtual Tour</span>
@@ -256,8 +250,8 @@ const Home = () => {
                   onClick={() => setCurrentImage(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     index === currentImage
-                      ? 'bg-[#FFDBBB] w-8'
-                      : 'bg-[#FFDBBB]/40 hover:bg-[#FFDBBB]/60'
+                      ? 'bg-white w-8'
+                      : 'bg-white/40 hover:bg-white/60'
                   }`}
                 />
               ))}
@@ -275,7 +269,8 @@ const Home = () => {
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="flex flex-col items-center text-[#FFDBBB]/80"
+            className="flex flex-col items-center text-white/80"
+            style={{ textShadow: '0 2px 10px rgba(0,0,0,0.7)' }}
           >
             <span className="text-sm mb-2">Scroll to explore</span>
             <ChevronDownIcon className="h-6 w-6" />
