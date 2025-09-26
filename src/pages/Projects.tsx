@@ -3,6 +3,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import ProjectCard from '../components/ProjectCard';
 import LoadingScreen from '../components/LoadingScreen';
+import img1 from '../public/img1.png';
+import img2 from '../public/img2.png';
+import img3 from '../public/img3.png';
+
 
 const Projects = () => {
   const [loading, setLoading] = useState(true);
