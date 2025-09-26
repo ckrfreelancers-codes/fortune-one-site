@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import React from 'react';
 import { motion } from 'framer-motion';
-import ProjectCard from '../components/ProjectCard';
 import LoadingScreen from '../components/LoadingScreen';
 import img1 from '../public/img1.png';
 import img2 from '../public/img2.png';
@@ -177,7 +176,91 @@ const Projects = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <ProjectCard key={project.id} project={project} index={index} />
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                whileHover={{ 
+                  y: -10, 
+                  scale: 1.02,
+                  rotateY: 2
+                }}
+                className="bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+              >
+                {/* Image Container - Full width with proper aspect ratio */}
+                <div className="relative w-full h-64 overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  />
+                  <div className="absolute top-4 right-4">
+                    <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
+                      project.status === 'Available' ? 'bg-green-500 text-white' :
+                      project.status === 'Selling Fast' ? 'bg-orange-500 text-white' :
+                      'bg-blue-500 text-white'
+                    }`}>
+                      {project.status}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Content Section */}
+                <div className="p-6">
+                  <div className="mb-4">
+                    <h3 className="text-2xl font-bold text-[#664930] mb-2">
+                      {project.title}
+                    </h3>
+                    <p className="text-[#664930]/70 mb-1 flex items-center">
+                      <span className="mr-2">📍</span>
+                      {project.location}
+                    </p>
+                    <p className="text-[#997E67] font-semibold text-lg">
+                      {project.price}
+                    </p>
+                  </div>
+
+                  <div className="mb-4">
+                    <span className="inline-block px-3 py-1 bg-[#CCBEB1]/30 text-[#664930] text-sm rounded-full font-medium">
+                      {project.type}
+                    </span>
+                  </div>
+
+                  <div className="mb-6">
+                    <h4 className="text-sm font-semibold text-[#664930] mb-2">Features:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {project.features.map((feature, idx) => (
+                        <span 
+                          key={idx}
+                          className="text-xs px-2 py-1 bg-[#FFDBBB]/50 text-[#664930] rounded-lg"
+                        >
+                          {feature}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="flex gap-3">
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="flex-1 py-2 bg-gradient-to-r from-[#664930] to-[#997E67] text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300 text-sm"
+                    >
+                      View Details
+                    </motion.button>
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={() => setShowSiteVisitForm(true)}
+                      className="flex-1 py-2 border-2 border-[#664930] text-[#664930] font-semibold rounded-xl hover:bg-[#664930] hover:text-white transition-all duration-300 text-sm"
+                    >
+                      Schedule Visit
+                    </motion.button>
+                  </div>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
