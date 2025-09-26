@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { UsersIcon, TrophyIcon, ChartBarIcon } from '@heroicons/react/24/outline';
 import LoadingScreen from '../components/LoadingScreen';
