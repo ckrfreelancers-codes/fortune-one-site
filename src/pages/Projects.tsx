@@ -51,36 +51,6 @@ const Projects = () => {
       image: '/WhatsApp Image 2025-09-25 at 14.47.23_b5da7b83.jpg',
       status: 'Pre-Launch',
       features: ['3-4 BHK', 'Sea View', 'Private Elevator', 'Concierge']
-    },
-    {
-      id: 4,
-      title: 'Fortune One Tech Park',
-      location: 'Marathahalli, Bangalore',
-      price: 'Starting ₹1.8 Cr',
-      type: 'Smart Apartments',
-      image: '/WhatsApp Image 2025-09-25 at 14.47.26_f5e0d268.jpg',
-      status: 'Available',
-      features: ['2-3 BHK', 'Co-working Space', 'EV Charging', 'High-Speed Internet']
-    },
-    {
-      id: 5,
-      title: 'Fortune One Heritage',
-      location: 'Koramangala, Bangalore',
-      price: 'Starting ₹5.5 Cr',
-      type: 'Luxury Mansions',
-      image: '/WhatsApp Image 2025-09-25 at 14.47.25_cb718229.jpg',
-      status: 'Exclusive',
-      features: ['5-7 BHK', 'Heritage Design', 'Wine Cellar', 'Home Theater']
-    },
-    {
-      id: 6,
-      title: 'Fortune One Eco Homes',
-      location: 'Hennur Road, Bangalore',
-      price: 'Starting ₹2.1 Cr',
-      type: 'Eco-Friendly Homes',
-      image: '/WhatsApp Image 2025-09-25 at 14.47.26_df6a02cb.jpg',
-      status: 'Coming Soon',
-      features: ['2-4 BHK', 'Solar Panels', 'Rainwater Harvesting', 'Organic Gardens']
     }
   ];
 
