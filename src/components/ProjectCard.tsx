@@ -103,34 +103,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
         >
           {project.title}
         </motion.h3>
-        
-        <div className="flex items-center text-[#664930]/70 mb-3">
-          <MapPinIcon className="h-4 w-4 mr-1" />
-          <span className="text-sm">{project.location}</span>
-        </div>
-        
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center text-[#997E67] font-bold text-lg">
-            <CurrencyRupeeIcon className="h-5 w-5 mr-1" />
-            {project.price.replace('$', '₹')}
-          </div>
-        </div>
-        
-        <div className="flex flex-wrap gap-2 mb-4">
-          {project.features.map((feature, idx) => (
-            <span key={idx} className="px-2 py-1 bg-[#CCBEB1]/30 text-[#664930] rounded-lg text-xs font-medium">
-              {feature}
-            </span>
-          ))}
-        </div>
-        
-        <motion.button
-          whileHover={{ scale: 1.02, y: -2 }}
-          whileTap={{ scale: 0.98 }}
-          className="w-full py-3 bg-gradient-to-r from-[#997E67] to-[#664930] text-[#FFDBBB] font-semibold rounded-xl hover:shadow-lg transition-all duration-300 group-hover:from-[#664930] group-hover:to-[#997E67]"
-        >
-          View Details
-        </motion.button>
       </motion.div>
 
       {/* Decorative elements */}
