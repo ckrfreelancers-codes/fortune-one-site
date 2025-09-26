@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import Menu from './components/Menu';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import Projects from './pages/Projects';
@@ -16,8 +16,8 @@ function App() {
       {/* Updated with neutral elegance gradient background */}
       <div className="min-h-screen bg-gradient-to-br from-[#FFDBBB] via-[#CCBEB1] to-[#997E67] text-[#664930] flex flex-col">
         
-        {/* Navbar stays on top */}
-        <Navbar />
+        {/* Menu component */}
+        <Menu />
 
         {/* Main page routes */}
         <div className="flex-grow">
