@@ -28,7 +28,7 @@ const Projects = () => {
       location: 'Whitefield, Bangalore',
       price: 'Starting ₹2.5 Cr',
       type: 'Luxury Apartments',
-      image: '/WhatsApp Image 2025-09-25 at 14.47.28_1865cf5f.jpg',
+      image: '/img1.png',
       status: 'Available',
       features: ['3-4 BHK', 'Smart Home', 'Gym & Pool', 'Parking']
     },
@@ -38,7 +38,7 @@ const Projects = () => {
       location: 'Sarjapur Road, Bangalore',
       price: 'Starting ₹3.8 Cr',
       type: 'Premium Villas',
-      image: '/WhatsApp Image 2025-09-25 at 14.47.26_df6a02cb.jpg',
+      image: '/img2.png',
       status: 'Selling Fast',
       features: ['4-5 BHK', 'Private Garden', 'Club House', '24/7 Security']
     },
@@ -48,7 +48,7 @@ const Projects = () => {
       location: 'Electronic City, Bangalore',
       price: 'Starting ₹4.2 Cr',
       type: 'Penthouse Suites',
-      image: '/WhatsApp Image 2025-09-25 at 14.47.23_b5da7b83.jpg',
+      image: '/img3.png
       status: 'Pre-Launch',
       features: ['3-4 BHK', 'Sea View', 'Private Elevator', 'Concierge']
     }
