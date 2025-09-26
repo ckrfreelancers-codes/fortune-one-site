@@ -2,8 +2,10 @@ import { useState } from 'react';
 import React from 'react';
 import { motion } from 'framer-motion';
 import ProjectCard from '../components/ProjectCard';
+import LoadingScreen from '../components/LoadingScreen';
 
 const Projects = () => {
+  const [loading, setLoading] = useState(true);
   const [showSiteVisitForm, setShowSiteVisitForm] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -13,6 +15,11 @@ const Projects = () => {
     preferredDate: '',
     message: ''
   });
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const projects = [
     {
@@ -101,7 +108,9 @@ const Projects = () => {
   };
 
   return (
-    <div className="min-h-screen pt-20 bg-gradient-to-br from-[#FFDBBB] via-[#CCBEB1] to-[#997E67]">
+    <div className="min-h-screen pt-20 bg-gradient-to-br from-[#FFDBBB] via-[#CCBEB1] to-[#997E67] relative">
+      <LoadingScreen loading={loading} />
+      
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-[#664930] via-[#997E67] to-[#CCBEB1] text-[#FFDBBB] relative overflow-hidden">
         <div className="absolute inset-0">

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDownIcon, PlayIcon, SparklesIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import { useInView } from "react-intersection-observer";
+import LoadingScreen from "../components/LoadingScreen";
 
 // Swiper imports for gallery
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -82,31 +83,10 @@ const Home = () => {
     });
   }, [statsInView]);
 
-  if (loading) {
-    return (
-      <AnimatePresence>
-        <motion.div
-          className="fixed inset-0 bg-transparent flex items-center justify-center z-50"
-          initial={{ opacity: 1 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0, transition: { duration: 0.8 } }}
-        >
-          <div className="text-center">
-            <motion.img
-              src="/Fortune One.png"
-              alt="Fortune One Logo"
-              className="w-auto h-auto max-w-40 max-h-40 mb-4 drop-shadow-2xl"
-              animate={{ scale: [1, 1.1, 1] }}
-              transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-            />
-          </div>
-        </motion.div>
-      </AnimatePresence>
-    );
-  }
-
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
+      <LoadingScreen loading={loading} />
+      
       {/* Hero Section - Redesigned */}
       <section className="relative min-h-screen w-full overflow-hidden">
         {/* Background Images with Enhanced Overlay */}

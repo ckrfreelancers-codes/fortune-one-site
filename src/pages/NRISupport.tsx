@@ -1,8 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { GlobeAltIcon, CreditCardIcon, PhoneIcon, DocumentCheckIcon } from '@heroicons/react/24/outline';
+import LoadingScreen from '../components/LoadingScreen';
 
 const NRISupport = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
   const services = [
     {
       icon: GlobeAltIcon,
@@ -55,7 +63,9 @@ const NRISupport = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-20 relative">
+      <LoadingScreen loading={loading} />
+      
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-[#664930] via-[#997E67] to-[#CCBEB1] text-white relative overflow-hidden">
         <div className="absolute inset-0">

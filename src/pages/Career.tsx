@@ -1,8 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { BriefcaseIcon, AcademicCapIcon, HeartIcon, TrophyIcon } from '@heroicons/react/24/outline';
+import LoadingScreen from '../components/LoadingScreen';
 
 const Career = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
   const values = [
     {
       icon: TrophyIcon,
@@ -36,7 +44,8 @@ const Career = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-20 relative">
+      <LoadingScreen loading={loading} />
 
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-[#664930] via-[#997E67] to-[#CCBEB1] text-white relative overflow-hidden">

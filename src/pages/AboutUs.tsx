@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import LoadingScreen from '../components/LoadingScreen';
 
 const AboutUs = () => {
   const [loading, setLoading] = useState(true);
@@ -34,29 +35,10 @@ const AboutUs = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  if (loading) {
-    return (
-      <AnimatePresence>
-        <motion.div
-          className="fixed inset-0 bg-[#FFDBBB] flex items-center justify-center z-50"
-          initial={{ opacity: 1 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0, transition: { duration: 0.8 } }}
-        >
-          <motion.img
-            src="/Fortune One.png"
-            alt="Logo"
-            className="h-auto w-auto max-w-32 max-h-32"
-            animate={{ scale: [1, 1.1, 1] }}
-            transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-          />
-        </motion.div>
-      </AnimatePresence>
-    );
-  }
-
   return (
-    <div className="min-h-screen bg-white py-20">
+    <div className="min-h-screen bg-white py-20 relative">
+      <LoadingScreen loading={loading} />
+      
       {/* Hero Section */}
      <section className="relative h-80 flex items-center justify-center text-center rounded-b-3xl bg-gradient-to-r from-[#FFDBBB] via-[#CCBEB1] to-[#997E67]">
         <div className="relative z-10 max-w-3xl px-4">

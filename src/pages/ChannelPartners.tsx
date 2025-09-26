@@ -1,8 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { UsersIcon, TrophyIcon, ChartBarIcon } from '@heroicons/react/24/outline';
+import LoadingScreen from '../components/LoadingScreen';
 
 const ChannelPartners = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
   const benefits = [
     {
       icon: TrophyIcon,
@@ -40,7 +48,9 @@ const ChannelPartners = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-20 relative">
+      <LoadingScreen loading={loading} />
+      
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-[#997E67] via-[#664930] to-[#997E67] text-[#FFDBBB] relative overflow-hidden">
         <div className="absolute inset-0">
