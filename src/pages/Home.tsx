@@ -17,22 +17,22 @@ const Home = () => {
 
   const images = [
     {
-      src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
+      src: "/WhatsApp Image 2025-09-25 at 14.47.26_f5e0d268.jpg",
       title: "Luxury Living",
-      subtitle: "Where Dreams Meet Reality",
-      description: "Experience unparalleled comfort in our premium residential spaces"
+      subtitle: "Fortune One Development",
+      description: "Master-planned community with premium amenities and modern infrastructure"
     },
     {
-      src: "https://images.unsplash.com/photo-1502003148287-a82ef80a6abc?auto=format&fit=crop&w=1600&q=80",
+      src: "/WhatsApp Image 2025-09-25 at 14.47.25_cb718229.jpg",
       title: "Premium Properties",
-      subtitle: "Crafted for Excellence",
-      description: "Meticulously designed homes that redefine modern living"
+      subtitle: "Fortune One Entrance",
+      description: "Grand entrance with contemporary design and landscaping"
     },
     {
-      src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80",
+      src: "/WhatsApp Image 2025-09-25 at 14.47.26_df6a02cb.jpg",
       title: "Investment Opportunities",
-      subtitle: "Your Future Starts Here",
-      description: "Smart investments in prime locations for lasting value"
+      subtitle: "Modern Architecture",
+      description: "Contemporary villa design with premium finishes and landscaping"
     }
   ];
 
@@ -403,25 +403,25 @@ const Home = () => {
             {[
               { 
                 title: "Apartments", 
-                image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80",
+                image: "/WhatsApp Image 2025-09-25 at 14.47.28_1865cf5f.jpg",
                 description: "Modern living spaces with premium amenities",
                 features: ["2-4 BHK", "Smart Homes", "Premium Amenities"]
               },
               { 
                 title: "Plots", 
-                image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&w=400&q=80",
+                image: "/WhatsApp Image 2025-09-25 at 14.47.26_f5e0d268.jpg",
                 description: "Prime land parcels for your dream home",
                 features: ["DTCP Approved", "Clear Titles", "Gated Community"]
               },
               { 
                 title: "Villas", 
-                image: "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&w=400&q=80",
+                image: "/WhatsApp Image 2025-09-25 at 14.47.26_df6a02cb.jpg",
                 description: "Exclusive independent homes with luxury",
                 features: ["3-5 BHK", "Private Gardens", "Premium Locations"]
               },
               { 
                 title: "Townships", 
-                image: "https://images.unsplash.com/photo-1599423300746-b62533397364?auto=format&w=400&q=80",
+                image: "/WhatsApp Image 2025-09-25 at 14.47.23_b5da7b83.jpg",
                 description: "Integrated communities with world-class facilities",
                 features: ["Master Planned", "Complete Infrastructure", "Lifestyle Amenities"]
               },

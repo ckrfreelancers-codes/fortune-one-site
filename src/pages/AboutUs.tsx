@@ -10,12 +10,12 @@ const AboutUs = () => {
     {
       title: "Mission",
       text: `Our mission is to redefine the real estate experience by offering not just properties, but thoughtfully designed spaces that reflect luxury, trust, and innovation. We are committed to providing expert guidance and end-to-end services, ensuring every client’s journey — from discovery to ownership — is smooth and rewarding. With a foundation built on customer satisfaction, transparency, and excellence, we strive to craft landmark developments that create lasting value and inspire future generations.`,
-      image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=600&q=80",
+      image: "/WhatsApp Image 2025-09-25 at 14.47.26_f5e0d268.jpg",
     },
     {
       title: "Vision",
       text: `Our vision is to be a global leader in real estate, setting new benchmarks in design, quality, and customer care. We aspire to create iconic properties that blend modern living with sustainable practices, transforming skylines and enriching lives. By embracing innovation, personalization, and integrity, we aim to build communities where dreams take root and prosperity grows.`,
-      image: "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80",
+      image: "/WhatsApp Image 2025-09-25 at 14.47.25_cb718229.jpg",
     },
     {
       title: "Values",
@@ -26,7 +26,7 @@ const AboutUs = () => {
         "Innovation – We embrace creativity, technology, and forward-thinking solutions.",
         "Trust – We nurture lasting relationships built on transparency, reliability, and respect.",
       ],
-      image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=600&q=80",
+      image: "/WhatsApp Image 2025-09-25 at 14.47.28_1865cf5f.jpg",
     },
   ];
 

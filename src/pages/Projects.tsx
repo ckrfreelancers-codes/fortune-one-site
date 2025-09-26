@@ -28,7 +28,7 @@ const Projects = () => {
       location: 'Whitefield, Bangalore',
       price: 'Starting ₹2.5 Cr',
       type: 'Luxury Apartments',
-      image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80',
+      image: '/WhatsApp Image 2025-09-25 at 14.47.28_1865cf5f.jpg',
       status: 'Available',
       features: ['3-4 BHK', 'Smart Home', 'Gym & Pool', 'Parking']
     },
@@ -38,7 +38,7 @@ const Projects = () => {
       location: 'Sarjapur Road, Bangalore',
       price: 'Starting ₹3.8 Cr',
       type: 'Premium Villas',
-      image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80',
+      image: '/WhatsApp Image 2025-09-25 at 14.47.26_df6a02cb.jpg',
       status: 'Selling Fast',
       features: ['4-5 BHK', 'Private Garden', 'Club House', '24/7 Security']
     },
@@ -48,7 +48,7 @@ const Projects = () => {
       location: 'Electronic City, Bangalore',
       price: 'Starting ₹4.2 Cr',
       type: 'Penthouse Suites',
-      image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80',
+      image: '/WhatsApp Image 2025-09-25 at 14.47.23_b5da7b83.jpg',
       status: 'Pre-Launch',
       features: ['3-4 BHK', 'Sea View', 'Private Elevator', 'Concierge']
     },
@@ -58,7 +58,7 @@ const Projects = () => {
       location: 'Marathahalli, Bangalore',
       price: 'Starting ₹1.8 Cr',
       type: 'Smart Apartments',
-      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80',
+      image: '/WhatsApp Image 2025-09-25 at 14.47.26_f5e0d268.jpg',
       status: 'Available',
       features: ['2-3 BHK', 'Co-working Space', 'EV Charging', 'High-Speed Internet']
     },
@@ -68,7 +68,7 @@ const Projects = () => {
       location: 'Koramangala, Bangalore',
       price: 'Starting ₹5.5 Cr',
       type: 'Luxury Mansions',
-      image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80',
+      image: '/WhatsApp Image 2025-09-25 at 14.47.25_cb718229.jpg',
       status: 'Exclusive',
       features: ['5-7 BHK', 'Heritage Design', 'Wine Cellar', 'Home Theater']
     },
@@ -78,7 +78,7 @@ const Projects = () => {
       location: 'Hennur Road, Bangalore',
       price: 'Starting ₹2.1 Cr',
       type: 'Eco-Friendly Homes',
-      image: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?auto=format&fit=crop&w=1200&q=80',
+      image: '/WhatsApp Image 2025-09-25 at 14.47.26_df6a02cb.jpg',
       status: 'Coming Soon',
       features: ['2-4 BHK', 'Solar Panels', 'Rainwater Harvesting', 'Organic Gardens']
     }
