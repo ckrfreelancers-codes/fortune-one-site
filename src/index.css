@@ -6,3 +6,14 @@
 .font-cursive {
   font-family: 'Great Vibes', cursive;
 }
+
+/* Custom Swiper Pagination Styles */
+.custom-swiper-bullet {
+  background-color: #664930 !important;
+  opacity: 0.5 !important;
+}
+
+.custom-swiper-bullet-active {
+  background-color: #664930 !important;
+  opacity: 1 !important;
+}

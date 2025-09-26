@@ -548,8 +548,8 @@ const Home = () => {
               autoplay={{ delay: 4000, disableOnInteraction: false }}
               pagination={{ 
                 clickable: true,
-                bulletClass: 'swiper-pagination-bullet !bg-[#664930] !opacity-50',
-                bulletActiveClass: 'swiper-pagination-bullet-active !bg-[#664930] !opacity-100'
+                bulletClass: 'swiper-pagination-bullet custom-swiper-bullet',
+                bulletActiveClass: 'swiper-pagination-bullet-active custom-swiper-bullet-active'
               }}
               navigation={{
                 nextEl: '.swiper-button-next',
