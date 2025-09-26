@@ -52,7 +52,7 @@ const Projects = () => {
       location: 'Electronic City, Bangalore',
       price: 'Starting ₹4.2 Cr',
       type: 'Penthouse Suites',
-      image: '/img3.png'
+      image: '/img3.png',
       status: 'Pre-Launch',
       features: ['3-4 BHK', 'Sea View', 'Private Elevator', 'Concierge']
     }
