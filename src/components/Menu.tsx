@@ -195,11 +195,8 @@ const Menu = () => {
                   transition={{ delay: 0.5 }}
                   className="text-center"
                 >
-                  <p className="text-[#FFDBBB]/80 text-sm mb-2">
-                    Safe, Secure & Memorable
-                  </p>
-                  <p className="text-[#FFDBBB]/60 text-xs">
-                    Real Estate Experiences
+                  <p className="text-[#FFDBBB]/80 text-sm">
+                    Fortune One Group
                   </p>
                 </motion.div>
               </div>
