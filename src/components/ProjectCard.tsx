@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { MapPinIcon, CurrencyRupeeIcon } from '@heroicons/react/24/outline';
 
 interface Project {
   id: number;
@@ -55,12 +56,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
       className="group bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden transform perspective-1000 hover:shadow-2xl transition-all duration-500 border border-[#CCBEB1]/30"
       style={{ transformStyle: 'preserve-3d' }}
     >
-      {/* Image Section - Full card coverage with proper fitting */}
       <div className="relative h-64 overflow-hidden">
         <motion.img
           src={project.image}
           alt={project.title}
-          className="w-full h-full object-cover object-center transition-transform duration-700"
+          className="w-full h-full object-cover transition-transform duration-700"
           whileHover={{ scale: 1.1 }}
         />
         
@@ -93,7 +93,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
         </motion.div>
       </div>
       
-      {/* Content Section - Only title */}
       <motion.div 
         className="p-6"
         style={{ transform: 'translateZ(20px)' }}
